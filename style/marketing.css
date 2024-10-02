@@ -1,0 +1,453 @@
+/* Marketing *********************************************/
+.maincat-page{
+    max-width: 1200px;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.marketing{
+    text-transform: none;
+    font-weight: 300;
+    letter-spacing: -0.3px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.marketing-1dio, .marketing-2dio, .marketing-3dio, .marketing-4dio, .marketing-5-dio{
+    grid-column: span 12;
+    margin:80px 0;
+}
+
+.marketing-5-dio{
+    margin-bottom: 20px;
+}
+
+.marketing-2dio{
+    margin-bottom: 160px;
+}
+
+#marketing-1dio-gore, #m-2d-g-1{
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#marketing-1dio-gore img{
+    display: none;
+}
+
+#marketing-1dio-gore::after, #m-2d-g-1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    width: 45px;
+    border-bottom: 3px solid #eb1e25;
+}
+
+
+.marketing-1dio-sredina{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin: 20px 0 20px 0;
+}
+
+#m-d-s-1{
+    grid-column: span 5;
+}
+
+#m-d-s-2{
+    display: flex;
+    grid-column: span 7;
+    align-items: center;
+}
+
+#m-d-s-2 img{
+    height:90px;
+}
+
+.marketing-1dio-sredina h3{
+    display: flex;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.marketing-1dio-dolje div{
+    display: flex;
+    margin:10px 0;
+}
+
+.marketing-1dio-dolje div img{
+    width: 20px;
+    height: 20px;
+    margin-bottom:1px;
+    margin-right: 10px;
+    align-self: center;
+}
+
+.marketing-1dio-dolje div p{
+    font-size: 20px;
+    margin: auto 0;
+    font-weight: 500;
+}
+
+.marketing-1dio-dd div, #kontakt{
+    width: 200px;
+    margin: 30px 0 0 0;
+    height: 40px;
+    display: flex;
+    border: 1px solid #eb1e25;
+    background-color: #eb1e25;
+    color: white;
+}
+
+.marketing-1dio-dd div:hover, #kontakt:hover{
+    background-color: white;
+    color: #eb1e25;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    border: 1px double #eb1e25;
+}
+
+.marketing-1dio-dd div a, #kontakt a{
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#kontakt{
+    width: 250px;
+    margin:30px auto 30px auto;
+    gap:50px;
+}
+
+#kontakt a{
+    font-size: 20px;
+}
+
+.full-width-bg{
+    background-color: whitesmoke;
+}
+
+#m-2d-g-2{
+    margin: 10px 0 60px 0;
+    font-size: 13px;
+    color: #eb1e25;
+    font-weight: 500;
+}
+
+.full-width-bg::before, .marketing-before::before{
+    content: '';
+    background-color: #eb1e25;
+    height: 24px;
+    width: 2px;
+    position: absolute;
+    margin-top:-12px;
+    left: 50%;
+}
+
+.marketing-2dio-dolje, .marketing-3dio-dolje{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap:75px;
+    row-gap: 60px;
+}
+
+.marketing-2dio-dolje div{
+    grid-column: span 1;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+#m-2i2, #m-2i2-1, #m-2i2-2, #m-2i2-3, #m-2i2-4, #m-2i2-5{
+    display:none;
+}
+
+.disable-hover:hover{
+    background-color: #eb1e25;
+    color:white;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    border:1px solid #eb1e25;
+}
+
+
+.hover-hide-white-arr:hover #m-2i2, .hover-hide-white-arr:hover #m-2i2-1, .hover-hide-white-arr:hover #m-2i2-2, .hover-hide-white-arr:hover #m-2i2-3, .hover-hide-white-arr:hover #m-2i2-4, .hover-hide-white-arr:hover #m-2i2-5{
+    display:block;
+}
+
+.hover-hide-white-arr:hover #m-2i1, .hover-hide-white-arr:hover #m-2i1-1, .hover-hide-white-arr:hover #m-2i1-2, .hover-hide-white-arr:hover #m-2i1-3, .hover-hide-white-arr:hover #m-2i1-4, .hover-hide-white-arr:hover #m-2i1-5{
+    display:none;
+}
+
+#ponuda-a, #ponuda-b, #ponuda-c, #ponuda-d, #ponuda-e, #ponuda-f{
+    display: flex;
+    justify-content: space-between;
+    width:calc(100% - 30px);
+    padding:30px 0;
+    font-size:20px;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.marketing-2dio-dolje div a img{
+    width: 18px;
+    height:18px;
+    align-self: center;
+}
+
+.marketing-padajuci, .marketing-padajuci-iwb{
+    margin: 0 10px 30px 10px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 70px;
+    row-gap: 70px;
+}
+
+.marketing-padajuci li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align:center;
+    padding: 15px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 17px;
+    grid-column: span 1;
+}
+
+
+
+.marketing-padajuci-iwb li{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    padding: 15px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 400;
+    grid-column: span 1;
+}
+
+.iwb-li{
+    grid-column: span 3 !important;
+}
+
+.marketing-padajuci-iwb h4{
+    margin-bottom: 20px;
+}
+
+.marketing-padajuci h4 {
+    order: -1; 
+    margin-bottom: 20px;
+}
+
+#h4-nm{
+    margin-bottom: 0px;
+}
+
+.content {
+    order: 1;
+    background-color: whitesmoke !important;
+    border: none !important;
+}
+
+.button-marketing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.web-m p{
+    text-align: left;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.zatvori-img{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer; 
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+
+.zatvori-img img{
+    width:22px;
+    height: 22px;
+    transform: rotate(-90deg);
+    margin-bottom: 10px;
+}
+
+/*table{
+    margin:0 auto;
+    border-radius: 20px;
+    margin-bottom: 70px;
+}
+
+table, th, td {
+    border:1px solid black;
+    padding: 15px;
+}
+
+th{
+    font-size: 18px;
+}
+
+td{
+    font-size: 16px;
+    font-weight: 400;
+}*/
+
+.inline-block-center{
+    text-align: center;
+}
+
+.m-p-naslov {
+    display:inline-block;
+    text-align: center;
+    margin: 50px auto;
+    font-size: 20px;
+    padding-bottom:8px;
+    border-bottom: 2px solid #eb1e25;
+}
+
+.marketing-padajuci li h4{
+    border-bottom: 1px solid whitesmoke;
+    font-size: 17px;
+}
+
+.marketing-3dio-dolje div div{
+    margin-bottom: 50px;
+    height:197px;
+    width: 350px;
+}
+
+.marketing-3dio-dolje div div img{
+    height:100%;
+    width:100%;
+}
+
+#baticee{
+    margin-top:30px;
+    line-height: 2;
+}
+
+#baticee-dolje1{
+    margin: 0 0 20px -60px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: gray;
+}
+
+#baticee-dolje2{
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.social-marketing{
+    display:flex;
+    justify-content: center;
+    gap:60px;
+}
+
+.social-marketing a img{
+    width:35px;
+    height: 35px;
+}
+
+.form{
+    grid-column: span 12;
+    display: none;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    position: fixed;
+    height:400px;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    overflow-y: auto; 
+    border-top: 5px solid #ebebeb;
+}
+
+#contact-form-h2{
+    border-bottom:2px solid #eb1e25;
+    padding-bottom: 3px;
+}
+
+.close-closebtn{
+    grid-column: span 2;
+    text-align: right;
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 25px;
+    color: #202020;
+}
+
+#form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+#form-1, #form-2{
+    grid-column: span 1;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.tet, .textarea{
+    grid-column: span 1;
+    width: 360px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #202020;
+    font-size: 16px;
+    border: 1px solid #ebebeb;
+    line-height: 1.7;
+}
+
+.textarea{
+    height: 190px;
+    resize: none;
+}
+
+.button {
+    height:50px;
+    grid-column: span 2;
+    max-width: 100%;
+    background-color: #eb1e25;
+    color: white;
+    letter-spacing: 1.1px;
+    font-size: 17px;
+    border: 1px solid #ebebeb;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20x;
+    cursor: pointer;
+}
+
+.hide-footer{
+    display: none;
+}

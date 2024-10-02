@@ -1,0 +1,890 @@
+/* Tablet **************************************/
+
+
+@media (max-width:1200px) {
+
+    body{
+        overflow-y: auto;
+    }
+
+    .nav-desktop{
+        display: none;
+    }
+
+    .nav-mob{
+        display: grid;
+        background: #EB1E25;        
+    }
+
+    .container-nav{
+        height:100px;
+    }
+
+    .nav-logo-mob{
+        display: flex;
+        grid-column: span 6;
+        justify-content: left;
+        align-self: center;
+        margin-left: 10px;
+    }
+
+    .nav-logo-mob>a{
+        height:35px;
+    }
+
+    .menu-mob{
+        display: flex;
+        grid-column: span 6;
+        justify-content: right;
+        align-self: center;
+        column-gap: 15px;
+        height:50px;
+    }
+
+    .menu-mob>a{
+        display: flex;
+        align-self: center;
+    }
+
+    .menu-mob>a>img{
+        height:16px;
+        width: 16px;
+
+    }
+    #hamburger{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .izbornik-main{
+        display: block;
+        position: fixed;
+        overflow-y: auto;
+        overflow-x: hidden; /* bitno da se ne prikazuju slike ;) */
+        width: 320px;
+        height: 100vh;
+        top:0;
+        right:-320px;
+        background: #ffffff;
+        z-index:4;
+        transition: right 0.3s ease;
+    }
+        
+    .izbornik-main a {
+        text-decoration: none;
+        font-size: 15px;
+        color: #232323;
+        transition: 0.3s;
+    }
+        
+    .izbornik-main a:hover {
+        color: #EB1E25;
+    }
+
+    .closebtn{
+        font-size: 28px !important;
+        padding: 8px 0 8px 0;
+        text-align: center;
+    }
+    
+    .close-menu-mob{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); 
+        -webkit-box-shadow: 1.1px 2.8px 8px 0 rgba(0, 0, 0, .1);
+        -moz-box-shadow: 1.1px 2.8px 8px 0 rgba(0, 0, 0, .1);
+        box-shadow: 1.1px 2.8px 8px 0 rgba(0, 0, 0, .1)    ;
+        padding:0 15px;  
+    }
+
+    .logo-div{
+        padding: 8px 0 8px 32px;
+        display: flex;
+        align-items: center;
+        grid-column: span 10;
+        text-align: left;
+    }
+
+    .logo-div img{
+        height:40px;
+    }
+
+    .close-div{
+        display: flex;
+        grid-column: span 6;
+        text-align: center;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .social-mob{
+        grid-column: span 6;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        column-gap: 15px;
+    }
+
+    .social-mob>a{
+        height:16px;
+    }
+
+    .social-mob>a>img{
+        height:16px;
+        width:16px;
+    }
+
+    .nav-mobile{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        border-bottom: 1px solid #ebebeb;
+        padding:7px 0;
+    }
+
+    .gumb-red{
+        width: 5px;
+        height: 3px;
+        display: inline-block;
+        margin-right: 13px;
+        background-color: #EB1E25;
+    }
+
+    .gumb-green{
+        width: 5px;
+        height: 3px;
+        display: inline-block;
+        margin-right: 13px;
+        background-color: #4F9504;
+    }
+
+    .nav-mobile-1{
+        padding: 8px 0 8px 15px;
+        display: flex;
+        align-items: center;
+        grid-column: span 10;
+        text-align: left;
+    }
+
+    .nav-mobile-111{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .arrow-mobile{
+        width: 16px;
+    }
+    
+    .mobile-2{
+        padding: 8px 15px 8px 0 !important;
+        grid-column: span 2;
+        text-align: center;
+        display: flex !important;
+        justify-content: right;
+        align-items: center;
+    }
+
+    #dropdown-mobile-1, #dropdown-mobile-2, #dropdown-mobile-3, #dropdown-mobile-4, #dropdown-mobile-5 {
+        display: none;
+        grid-row: 2;
+        grid-column: span 12; 
+    }
+
+    #dropdown-mobile-ul{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-size: 13px;
+        font-weight: 300;
+        text-transform: none;
+        padding-left: 15px;
+        padding-bottom: 10px;
+    }
+
+    .nav-mobile-1{
+        height: 40px;
+    }
+
+    .sport-ul li{
+        border-left:1px solid #4F9504 !important;
+    }
+
+    #dropdown-mobile-ul li{
+        grid-column: span 3;
+        border-left:1px solid #EB1E25;
+    }
+
+    #dropdown-mobile-ul li a{
+        display: block;
+        width: 100%;
+        padding: 10px 10px;
+    }
+
+    .overlay video{
+        display:flex; 
+        margin: 30px auto;
+    }
+
+    .naslovna-prvi-dio{
+        padding: 0 30px;
+    }
+
+    .naslovna-prvi-article img{
+        height: 226px;
+    }
+
+    .main-menu-mob{
+        grid-column: span 12;
+        background-color: #EB1E25;
+    }
+
+    .main-menu-ul-mob{
+        display:flex;
+        height:50px;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+  
+    .main-menu-ul-mob>li>a{
+        padding: 10px;
+        color:white;
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .impressum-mob{
+        border-top: 2px solid #d9d9d9;
+        border-bottom: 3px solid #d9d9d9;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 15px;
+        gap: 20px 15px;
+    }
+
+    .impressum-mob>a{
+        display: flex;
+        align-items: center;
+    }
+
+    .radio-mob{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:8px 15px 30px 15px;
+        border-top: 3px solid #D9D9D9;
+    }
+
+    .imas-vijest{
+        padding:20px 15px;
+        text-align: center;
+    }
+
+    .imas-vijest>h4{
+        display: inline-block;
+        border-bottom: 2px solid #EB1E25;
+    }
+
+    .imas-vijest>p{
+        padding:10px 0;
+    }
+
+
+/* Featured.css ****************************************************/
+
+    .featured-top{
+        gap: 30px;
+        grid-template-columns: repeat(1,1fr);
+        margin-bottom: 30px !important;
+    }
+
+    .featured-main{
+        grid-column:span 1;
+        max-width: 768px;
+        margin:0 auto;
+    }
+
+    .featured-postdiv, .slagerx2-postdiv, .slagerx3-postdiv, .slagerx4-postdiv{
+        display: flex;
+        justify-items: center;
+        width: 100%;
+    }
+
+  
+
+    .featured-category, .slagerx2-category, .slagerx3-category, .slagerx4-category, .slagerx4-category-all{
+        display: block;
+        position: static;
+        margin:10px 0;
+    }
+
+    .featured-post-title, .slagerx2-post-title, .slagerx3-post-title, .slagerx4-post-title, .slagerx4-post-title-all{
+        padding-top:0;
+
+    }
+
+    .featured-main h1, .slagerx2-main h1{
+        font-size: 25px;
+    }
+
+    .slager-parent{
+        grid-column: span 12;
+    }
+
+    .slagerx2{
+        grid-template-columns: repeat(1, 1fr);
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        max-width: 1200px;
+    }
+
+    .slagerx2-main{
+        max-width: 768px;
+        margin:0 auto;
+    }
+
+    .slagerx2-main:first-of-type{
+        margin-bottom: 30px;
+    }
+
+    .slagerx2::after {
+        font-size: 45px;
+        margin: 30px auto;
+    }
+
+    .slagerx3{
+        max-width:768px;
+        grid-template-columns: repeat(4, 1fr);
+        overflow-x: scroll;
+        position: relative;
+        padding-right: 0 !important;
+        padding-left: 0px !important;
+        margin:0 auto;
+        width:100%;
+        padding-bottom: 20px;
+    }
+
+    /* Set the scrollbar height and background color for all the elements */
+    .slagerx3::-webkit-scrollbar, .slagerx4::-webkit-scrollbar, .vijesti-nav::-webkit-scrollbar, .sport-nav::-webkit-scrollbar{
+        height: 2px; /* Increase height for visibility */
+        background-color: white; /* Background of scrollbar (track color) */
+        padding-bottom: 20px;
+    }
+
+    /* Define the scrollbar track appearance (gray background) */
+    .slagerx3::-webkit-scrollbar-track, .slagerx4::-webkit-scrollbar-track, .vijesti-nav::-webkit-scrollbar-track, .sport-nav::-webkit-scrollbar-track{
+        background: #ebebeb; /* Track color (non-draggable area) */
+    }
+
+    /* Define the scrollbar thumb appearance (red when dragging, black when idle) */
+    .slagerx3::-webkit-scrollbar-thumb, .slagerx4::-webkit-scrollbar-thumb, .vijesti-nav::-webkit-scrollbar-thumb{
+        background: #EB1E25; /* Default thumb color */
+        border-radius: 4px; /* Rounded corners for the thumb */
+        transition: background-color 0.3s ease; /* Smooth transition when dragging */
+    }
+
+    .sport-nav::-webkit-scrollbar-thumb, .sport-slagerx3::-webkit-scrollbar-thumb{
+        background: #4F9504 !important; /* Default thumb color */
+        border-radius: 4px; /* Rounded corners for the thumb */
+        transition: background-color 0.3s ease; /* Smooth transition when dragging */
+    }
+
+    .promo-slagerx4::-webkit-scrollbar-thumb{
+        background: #E1B64E !important; /* Default thumb color */
+        border-radius: 4px; /* Rounded corners for the thumb */
+        transition: background-color 0.3s ease; /* Smooth transition when dragging */
+    }
+
+    .pp-slagerx4::-webkit-scrollbar-thumb{
+        background: #555555 !important;
+        border-radius: 4px;
+        transition: background-color 0.3s ease; /* Smooth transition when dragging */
+    }
+
+    .main-menu-ul-mob::-webkit-scrollbar{
+        height: 2px; /* Increase height for visibility */
+        background-color: white; /* Background of scrollbar (track color) */
+        padding-bottom: 20px;
+    }
+
+    .main-menu-ul-mob::-webkit-scrollbar-track {
+        background: #EB1E25;
+    }
+
+    .main-menu-ul-mob::-webkit-scrollbar-thumb {
+        background: #ebebeb; 
+    }
+
+    .slagerx3-main, .slagerx4-main{
+        min-width: 300px;
+        position: relative;
+    }
+
+    .slagerx3-main h1, .slagerx4-main h1, .slagerx4-main-all h1{
+        font-size: 20px;
+    }
+
+    .slagerx3-oglas{
+        display: block;
+        position: relative;
+        min-width: min-content;
+    }
+
+    .slager-aside{
+        grid-column: span 12;
+        max-width:768px;
+        margin:30px auto 0 auto;
+    }
+
+    .aside-news-main{
+        min-width:300px;
+    }
+
+    .aside-news{
+        display: none;
+        grid-column: span 1;
+    }
+
+    .slager-aside-oglas{
+        display: none;
+    }
+
+    .aside-news-mob{
+        display: block;
+    }
+
+    .slagerx4{
+        max-width: 768px;
+        margin:0 auto;
+        overflow-x: scroll;
+        padding-bottom: 20px;
+    }
+
+    .news-section, .news-tabs>div>button, .naslov h1, .icv-naslov{
+        text-align: center;
+    }
+
+    #opcine-naslov{
+        padding-top:0;
+    }
+
+    .vijesti-nav, .sport-nav{
+        max-width: 1200px;
+        justify-content: center;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #opcine-nav{
+        justify-content: left;
+        padding: 0 10px;
+    }
+
+    .slagerx4-all{
+        max-width: 768px;
+        margin:0 auto;
+    }
+
+    .slagerx4-main-all{
+        grid-column: span 2;
+    }
+
+
+/* Impressum ***************************************************************************/
+
+    .container-impressum{
+        margin:30px auto 0 auto;
+        padding-bottom: 0;
+    }
+
+    .impressum-naslov{
+        text-align: center;
+    }
+
+    .main-impressum{
+        grid-column: span 12;
+        padding-left: 0 !important;
+        margin:0 auto 30px auto;
+        border-left:none;
+    }
+
+    .main-other{
+        grid-column: span 12;
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+
+    .aside-impressum{
+        padding-top: 30px;
+        border-top: 1px solid #d9d9d9;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        grid-column: span 12;
+        grid-row: 2;
+    }
+
+    .aside-impressum>article>div>h1, .aside-impressum>article>div>p{
+        text-align: center;
+        margin-bottom:30px;
+    }
+
+    .template-poveznice{
+        max-width:768px;
+        margin:0 auto;
+    }
+
+    .trazilica-rezultati-link{
+        max-width: 768px;
+        margin: 0 auto;
+        display:block;
+    }
+
+    .trazilica-pic-container{
+        width:100%;
+    }
+
+    .trazilica-pic-link{
+        margin-right:0;
+    }
+
+    .trazilica-category{
+        padding: 10px 0 0 0;
+    }
+
+/* Single.css **************************************************************/
+
+    .main-single{
+        grid-column: span 12;
+        margin: 0 auto;
+        max-width: 768px;
+    }
+
+    .single-category{
+        margin-left:10px;
+    }
+
+    /* Marketing */
+
+    .marketing-1dio, .marketing-2dio, .marketing-3dio, .marketing-4dio, .marketing-5-dio{
+        margin: 80px 15px;
+    }
+
+    #marketing-1dio-gore, #m-2d-g-1{
+        font-size: 18px; 
+    }
+
+    .marketing-1dio-sredina h3 {
+        font-size: 45px;
+    }
+
+    .marketing-1dio-dolje div p {
+        font-size: 18px;
+    }
+
+    #m-d-s-1{
+        grid-column: span 7;
+    }
+
+    #m-d-s-2{
+        grid-column: span 5;
+    }
+
+    #m-d-s-2 img{
+        height:80px;
+    }
+
+    .marketing-1dio-dolje div img{
+        width:18px;
+        height:18px;
+    }
+
+    .marketing-1dio-dd div, #kontakt{
+        height:35px;
+    }
+
+    .marketing-1dio-dd div a, #kontakt a{
+        font-size: 16px;
+    }
+
+    .marketing-2dio-dolje{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .marketing-padajuci, .marketing-padajuci-iwb{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iwb-li{
+        grid-column: span 2 !important;
+    }
+
+    .marketing-3dio-dolje{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .marketing-3dio-dolje div div{
+        width:100%;
+        height:auto;
+    }
+
+    .marketing-4dio-dolje iframe{
+        width:100% !important;
+    }
+
+    #baticee-dolje1{
+        font-size: 16px;
+    }
+
+    #baticee-dolje2{
+        font-size: 21px;
+    }
+
+    #kontakt{
+        width:225px;
+    }
+
+    .social-marketing{
+        gap: 60px;
+    }
+
+    .social-marketing a img{
+        width:30px;
+        height: 30px;
+    }
+
+
+}
+
+
+@media (max-width:767px){
+
+    .main-menu-ul-mob{
+        justify-content: left;
+        overflow-x: scroll;
+    }
+
+    .search-field input[type="text"]{
+        width:300px;
+    }
+
+    .category{
+        font-size: 11px;
+    }
+
+    .featured-category, .slagerx2-category, .slagerx3-category, .slagerx4-category, .slagerx4-category-all{
+        margin:10px 10px;
+    }
+
+    .featured-post-title, .slagerx2-post-title, .slagerx3-post-title, .slagerx4-post-title, .slagerx4-post-title-all{
+        margin:10px 10px 0 10px;
+    }
+
+    .featured-main h1, .slagerx2-main h1 {
+        font-size: 20px;
+    }
+
+    .slagerx3-main h1, .slagerx4-main h1, .slagerx4-main-all h1 {
+        font-size: 18px;
+    }
+
+    .slagerx2::after {
+        font-size: 35px;
+    }
+
+    .news-naslov{
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .naslov h1 {
+        font-size: 30px;
+    }
+
+    .icv-naslov{
+        font-size:10px;
+    }
+
+    .slagerx4{
+        margin:unset;
+    }
+
+    .vijesti-nav, .sport-nav{
+        justify-content: left;
+        padding:0 10px;
+    }
+
+    .slagerx4-main-all {
+        grid-column: span 4;
+    }
+
+    .footer-navigacija{
+        display: none;
+    }
+
+    .oglas-izmedu{
+        margin:30px auto;
+    }
+
+    .trazilica-category{
+        padding: 0;
+        margin:10px;
+    }
+
+    .trazilica-post-title h1{
+        padding: 0 10px;
+    }
+
+    .trazilica-post-title p{
+        padding:10px;
+    }
+
+    .pagination, .pagination-promo, .pagination-sport, .pagination-pp{
+        margin: 0 10px;
+        grid-column: span 4;
+    }
+
+    .navigacija-stranica{
+        margin: 0 10px;
+    }
+
+    /* single.css ***************************************************/
+
+    #post-title, #date, .social-sharing{
+        margin: 0 10px 30px 10px;
+    }
+
+    #post-title{
+        font-size: 22px;
+    }
+
+    .caption{
+        margin: 10px 10px 20px 10px;
+    }
+
+    .post-content{
+        margin: 0 10px;
+    }
+
+    /* impressum *******************************************************/
+    
+    .impressum-naslov{
+        font-size: 35px;
+    }
+
+    .main-impressum{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #impressum-prazno{
+        display: none;
+    }
+
+    .main-impressum>article:nth-last-of-type(2){
+        margin-bottom:60px;
+    }
+
+    .main-other{
+        margin:0 10px;
+        border-left:0px solid black; 
+    }
+
+    .marketing-1dio{
+        margin: 40px 15px 80px 15px;
+    }
+
+    #marketing-1dio-gore img {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-bottom: -5px;
+        margin-left: 30px;
+      }    
+
+    .marketing-1dio-sredina h3 {
+        font-size: 35px;
+      }
+      
+    #m-d-s-1 {
+        grid-column: span 12;
+    }
+
+    #m-d-s-2 {
+        grid-column: span 12;
+        display: none;
+    }
+
+    .marketing-2dio-dolje {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+      .marketing-padajuci, .marketing-padajuci-iwb {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #m-d-2 {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    table, th, td {
+        border:1px solid black;
+        padding: 15px;
+    }
+    
+    th{
+        font-size: 18px;
+    }
+    
+    td{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .iwb-li {
+        grid-column: span 1 !important;
+    }
+
+    .excerptMob{
+        display:block;
+    }
+
+    .excerptTablet{
+        display: none;
+    }
+
+    #mob-main ul li{
+        margin: 30px 0;
+    }
+
+    .naslovnica-333posta{
+        grid-column: span 2;
+
+    }
+
+    .naslovnica-333posta-2{
+        grid-column: span 4;
+    } 
+
+    .form{
+        height: 100vh;
+    }
+
+    #form-1, #form-2{
+        grid-column: span 2;
+    }
+
+}
+

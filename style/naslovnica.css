@@ -1,0 +1,20 @@
+/* Naslovnica ***********************************/
+.container-mainxaside-main{
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.container-mainxaside{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.main-naslovnica{
+    grid-column: span 12;
+    max-width: 1200px;
+}
+

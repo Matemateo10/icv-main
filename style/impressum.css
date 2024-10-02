@@ -1,0 +1,84 @@
+/* Impressum *******************************************************/
+
+.container-impressum{
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-bottom: 60px;
+    border-bottom: 1px solid #ebebeb;
+    font-family: 'Open Sans';
+    color: #232323;
+    letter-spacing: -0.3px;
+}
+
+.aside-impressum{
+    grid-column: span 3;
+    width:350px;
+}
+
+.aside-impressum>article>div>h1{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.aside-impressum>article>div>p{
+    font-size: 16px;
+    line-height:1.5;
+    margin-bottom: 60px;
+}
+
+.main-impressum{
+    grid-column: span 8;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 50px;
+    border-left: 1px solid #ebebeb;
+    padding-left: 50px;
+}
+
+.main-impressum>article{
+    grid-column: span 1;
+    display:flex;
+    margin-bottom: 60px;
+}
+
+.main-impressum>article:last-of-type, .main-impressum>article:nth-last-of-type(2){
+    margin-bottom: 0;
+}
+
+.main-impressum>article>div>h4, .main-impressum>article>div>p{
+    margin: 0 0 5px 20px; 
+}
+
+.main-impressum>article>div>p{
+    font-size:14px;
+    color: #808080;
+    letter-spacing: 0;
+}
+
+.main-other{
+    grid-column: span 8;
+    column-gap: 50px;
+    border-left: 1px solid #ebebeb;
+    padding-left: 50px;
+}
+
+/* Impressum i ostali *****************************************************************************/
+
+.impressum-naslov{
+    font-size: 55px;
+    margin: 30px 0;
+    color:#E9E9E9;
+}
+
+#impressum{
+    column-gap: 50px;
+    max-width: 100%;
+}
+
+#impressum>li>a{
+    font-size:14px;
+}
+

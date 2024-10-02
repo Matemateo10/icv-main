@@ -1,0 +1,138 @@
+/* Tražilica-page ************************************************/
+
+.trazilica-naslov{
+    font-size: 20px;
+    grid-column:span 12;
+    display: flex;
+    justify-content: center;
+    color: #232323;
+}
+
+.trazilica-rezultati-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-column: span 12;
+    row-gap: 20px;
+    margin-bottom: 30px;
+}
+
+.trazilica-rezultati-link{
+    grid-column: span 1;
+    display: flex;
+}
+
+.trazilica-rezultati-link:last-of-type{
+    border-bottom: none;
+}
+
+.trazilica-pic-link{
+    margin-right:20px;
+}
+
+.trazilica-post-title h1{
+    padding: 10px 0;
+    color: #232323;
+    font-family: 'Merriweather';
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.trazilica-post-title p{
+    color: #232323;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0;
+}
+
+
+.trazilica-pic-container{
+    display: block;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.trazilica-pic-container .trazilica-pic{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.trazilica-rezultati-link:hover .trazilica-pic,
+.trazilica-rezultati-link:hover .post-pic {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+.trazilica-rezultati-link:hover .trazilica-post-page h3,
+.trazilica-rezultati-link:hover .trazilica-post-page p {
+    color: #082C5C;
+    transition: color 0.3s ease;
+}
+
+.trazilica-nema-rez{
+    text-align: center;
+    font-size: 16px;
+}
+
+.load-more-container {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.load-more-container button {
+    background-color: #EB1E25;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-container button:hover {
+    background-color: #b80f14;
+}
+
+.trazilica-category>a{
+    display: block !important;
+}
+
+.load-more-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.load-more-container button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.load-more-container button::after {
+    content: '';
+    display: none;
+    border: 2px solid #ccc;
+    border-top: 2px solid #000;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+.load-more-container button.loading::after {
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

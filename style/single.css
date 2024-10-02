@@ -1,0 +1,157 @@
+/* SINGLE ********************************************************************/
+
+.main-single{
+    grid-column: span 9;
+    margin-right: 50px;
+}
+
+.aside-single{
+    grid-column: span 3;
+}
+
+.single-category{
+    margin-bottom:30px;
+}
+
+.sport-category>.MyCategory>span{
+    color: #4F9504 !important;
+}
+
+.promo-category>.MyCategory>span{
+    color: #E1B64E !important;
+}
+
+.pp-category>.MyCategory>span{
+    color: #555555 !important;
+}
+
+#post-title{
+    font-family: 'Merriweather';
+    font-size: 36px;
+    margin-bottom:30px;
+}
+
+#post-title::after{
+    display: block;
+    margin-top: 30px;
+    width: 150px;
+    content: '';
+    border-bottom: 1px solid #EB1E25;
+}
+
+.sport-page::after {
+    border-bottom: 1px solid green !important;
+}
+
+.promo-page::after {
+    border-bottom: 1px solid #E1B64E !important;
+}
+
+.pp-page::after {
+    border-bottom: 1px solid #555555 !important;
+}
+
+#date{
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.social-sharing{
+    display: flex;
+    height:32px;
+    gap:10px;
+    margin-bottom: 30px;
+}
+
+.social-sharing>a{
+    display: flex;
+    align-items: center;
+}
+
+.post-pic-single{
+    display: block;
+    width:100%;
+    height:566px;
+    overflow: hidden;
+}
+
+.single-mainpic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    margin:10px 0 20px 0;
+    font-size: 12px;
+    color:#808080;
+    font-weight: 500;
+}
+
+.caption p{
+    height:12px;
+}
+
+.post-content{
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0;
+}
+
+.post-content iframe{
+    width: 100%;
+}
+
+.youtube-embed{
+    height:auto;
+    aspect-ratio: 16/9;
+}
+
+.post-content ul{
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.post-content li{
+    list-style-type:disc;
+}
+
+.post-content p{
+    margin-top: 20px;
+}
+
+.post-content img{
+    max-width:100%;
+    height:auto;
+}
+
+.post-content a{
+    color:#EB1E25;
+    text-decoration: underline;
+}
+
+.promo-single{
+    grid-column: span 12;
+    margin-top: 60px;
+}
+
+.povezane-vijesti-single{
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 60px 0 0 0;
+}
+
+.povezane-vijesti-single h1, .promo-single h1{
+    font-family: 'Merriweather';
+    font-weight: 400;
+    color: #232323;
+    letter-spacing: -0.3px;
+}
+

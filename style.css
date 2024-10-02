@@ -1,0 +1,277 @@
+/*
+Theme Name: ICV
+Author: ICVDizajn - Matko Bajan
+Description: ICV is developed for the needs of news site - ICV
+Requries at least : 6.4.1
+Tested up to: 7.2
+Requires PHP: 7.2
+Version: 1.0
+Lincese: GNU General Public Lincense v2 OR LATER
+lICENSE uri: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: ICV
+Tags: */
+
+/* Osnovno uređivanje *******************************************************/
+
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+/* 
+
+*::selection{
+    background-color:;
+    color:;
+}
+
+****************************************************************************/
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    letter-spacing: .4px;
+    color: #232323;
+    overflow-y: scroll;
+}
+
+ul, li{
+    padding:0;
+    list-style-type: none;
+}
+
+a{  
+    color:inherit;
+    text-decoration: none;
+}
+
+/*margin-top-bottom-padding-left-right *****************************************************************************/
+
+.mt-30{margin-top: 30px;}
+.mt-60{margin-top: 60px;}
+.mb-30{margin-bottom: 30px;}
+.mb-60{margin-bottom: 60px;}
+.pr-30{padding-right: 30px;}
+.pl-30{padding-left: 30px;}
+.pr-50{padding-right: 50px;}
+.pl-50{padding-left: 50px;}
+
+/* Js change color **********************************************************************************************/
+
+.text-color-red{
+    color: #eb1e25 !important;
+}
+
+.text-color-green{
+    color:#4F9504 !important;
+}
+
+.text-color-gold{
+    color:#E1B64E !important;
+}
+
+/* Category display ************************************************************************************************/
+
+.MyCategory{
+    color:#eb1e25;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.MyCategory:hover span{
+    text-decoration: underline;
+}
+
+
+/* Icon display ****************************************************/
+
+.file-link {
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    border:0px dashed #276BB0;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.file-link:hover{
+    background: #eb1e25;
+    color:white;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.file-link:hover a{
+    color:white;
+    transition: color 0.3s ease-in-out;
+}
+
+.file-link:last-of-type{
+    margin-bottom: 0;
+}
+
+.file-link a{
+    margin-top: 3px;
+    width: 100%;
+    padding: 8px 0px 8px 3px;
+    text-decoration: none;
+}
+
+.pdf-style img, .doc-style img, .xlsx-style img, .docx-style img, .doc-style img, .xls-style img, .csv-style img, .zip-style img, .odt-style img {
+    width:26px !important;
+    height: 26px !important; 
+    margin:0 10px 0 0;
+    margin-left: 3px;
+}
+
+
+/* table ********************/
+
+.table-div{
+    height: 800px; 
+    overflow: auto; 
+    border: 1px solid #ebebeb; 
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-div::-webkit-scrollbar{
+    /* width */
+    width: 10px;
+  }
+  
+  /* Track */
+  .table-div::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  /* Handle */
+  .table-div::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  .table-div::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+  }
+
+  /* Scrollbar button */
+.table-div::-webkit-scrollbar-button {
+    background: white;
+    height: 36px;
+    width: 36px;
+}
+
+/* Scrollbar button on hover */
+.table-div::-webkit-scrollbar-button:hover {
+    background: #aaa;
+    cursor: pointer;
+}
+
+/* Scrollbar button: up */
+.table-div::-webkit-scrollbar-button:vertical:decrement {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ccc"><polygon points="8,4 12,8 4,8"/></svg>') no-repeat center center;
+    background-size: 16px;
+}
+
+/* Scrollbar button: down */
+.table-div::-webkit-scrollbar-button:vertical:increment {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ccc"><polygon points="4,8 12,8 8,12"/></svg>') no-repeat center center;
+    background-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    color:white;
+    background-color: #eb1e25;
+    font-weight: 500;
+}
+
+.highlight{
+    background-color: #ebebeb;
+}
+
+
+/* sadrzaj *********************************************/
+
+.sadrzaj-desno p{
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+.sadrzaj-desno p strong{
+    font-size: 18px;
+}
+
+.sadrzaj-desno p:first-of-type{
+    padding-bottom: 10px;
+}
+
+.sadrzaj-desno ul, .sadrzaj-desno ol{
+    margin:0 0 10px 20px;
+}
+
+.sadrzaj-desno ul li{
+    list-style-type: disc;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+
+.sadrzaj-desno ol>li{
+    list-style-type: decimal;
+    margin-bottom: 10px;
+}
+
+/*.sadrzaj-desno ol>li:last-of-type, .sadrzaj-desno ul li:last-of-type{
+    padding-bottom:0;
+}*/
+
+.sadrzaj-desno ol>li>ul{
+    margin-top: 10px;
+}
+
+.sadrzaj-desno a{
+    color:#276BB0;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.sadrzaj-desno h1, .sadrzaj-desno h2, .sadrzaj-desno h3, .sadrzaj-desno h4, .sadrzaj-desno h5{
+    display: inline-block;
+    margin:10px 0 20px;
+    font-size: 23px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.sadrzaj-desno h1:first-of-type, .sadrzaj-desno h2:first-of-type, .sadrzaj-desno h3:first-of-type, .sadrzaj-desno h4:first-of-type, .sadrzaj-desno h5:first-of-type{
+    margin-top: 0;    
+}
+
+.sadrzaj-desno img{
+    max-width: 760px;
+    height:auto;
+}
+
+/* emeded style ********************/
+

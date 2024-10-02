@@ -1,0 +1,756 @@
+/* Featured *************************************/
+
+.featured{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin:60px 0;
+}
+
+.featured h1{
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    color:#232323;
+    letter-spacing: -0.3px;
+}
+
+.featured:last-of-type{
+    margin-bottom:0;
+}
+
+.featured-top{
+    grid-column: span 12;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.featured-main h1{
+    font-size: 30px;
+}
+
+.featured-main{
+    grid-column:span 1;
+    position: relative;
+}
+
+.featured-postdiv{
+    display: block;
+    width:100%;
+    height:372px;
+    overflow: hidden;
+}
+
+.featured-post-pic{
+    width: 100%;
+    height: 372px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center center; 
+    will-change: transform; 
+}
+
+.featured-main:hover .featured-post-pic{
+    transform: scale(1.03);
+}
+
+.natuknica{
+    position: absolute;
+    top:0px;
+    background-color: #B0161C;
+    border-bottom-right-radius: 20px;
+}
+
+.natuknica p{
+    color:white;
+    padding:5px 20px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.natuknica-promo{
+    position: absolute;
+    top:0px;
+    background-color: #E1B64E;
+    border-bottom-right-radius: 20px;
+}
+
+.natuknica-promo p{
+    color:white;
+    padding:5px 20px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+#natuknica-sport{
+    background-color: #4F9504 !important;
+}
+
+.featured-category{
+    display: inline-block;
+    margin:10px 0;
+}
+
+.featured-main:hover .featured-post-title>h1, .slagerx2-main:hover .slagerx2-post-title>h1, .slagerx3-main:hover .slagerx3-post-title>h1, .slagerx4-main:hover .slagerx4-post-title>h1, .slagerx4-main-all:hover .slagerx4-post-title-all>h1, .aside-news-main:hover .aside-news-post-title>h1{
+    color:#555555;
+}
+
+.featured-post-title{
+    display: block;
+}
+
+.featured-post-title:hover, .slagerx2-post-title:hover, .slagerx3-post-title:hover{
+    cursor: pointer;
+}
+
+
+/* Slageri ***********************************************/
+/* slagerx2 *********************************************/
+
+.slager-parent{
+    grid-column: span 9;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.slager-aside{
+    grid-column: span 3;
+}
+
+.slagerx2{
+    grid-column: span 12;
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+}
+
+.slagerx2-main{
+    grid-column: span 1;
+    position:relative;
+    height:min-content;
+}
+
+.slagerx2-postdiv{
+    display: block;
+    width: 100%;
+    height: 273px;
+    overflow: hidden;
+}
+
+.slagerx2-post-pic {
+    width: 100%;
+    height: 273px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center center;
+    will-change: transform; 
+}
+
+.slagerx2-main:hover .slagerx2-post-pic{
+    transform: scale(1.03);
+}
+
+.slagerx2-category {
+    display: inline-block;
+    margin:10px 0;
+}
+
+.slagerx2-post-title {
+    display: block;
+}
+
+.slagerx2-main h1 {
+    
+    font-size: 24px;
+    color: #232323;
+    letter-spacing: -0.3px;
+}
+
+.slagerx2::after{
+    font-family: 'Merriweather', serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #e9e9e9;
+    margin:40px 0;
+}
+
+#istaknuto::after{
+    content: 'Istaknuto';
+    
+}
+
+#istaknuto-vijesti::after{
+    content: 'Vijesti';
+}
+
+#istaknuto-virovitica::after{
+    content: 'Virovitica';
+}
+
+#istaknuto-zupanije::after{
+    content: 'Županije';
+}
+
+#istaknuto-opcine::after{
+    content:'Općine';
+}
+
+#istaknuto-sport::after{
+    content:'Sport';
+}
+
+#istaknuto-aktualno::after{
+    content:'Aktualno';
+}
+
+#istaknuto-crna-kronika::after{
+    content: 'Crna Kronika';
+}
+
+#istaknuto-hrvatska::after{
+    content: 'Hrvatska';
+}
+
+#istaknuto-politika::after{
+    content: 'Politika';
+}
+
+#istaknuto-vpz::after{
+    content: 'VPŽ';
+}
+
+#istaknuto-kkz::after{
+    content: 'KKŽ';
+}
+
+#istaknuto-obz::after{
+    content: 'OBŽ';
+}
+
+#istaknuto-pitomaca::after{
+    content: 'Pitomača ...';
+}
+
+#istaknuto-orahovica::after{
+    content: 'Orahovica ...';
+}
+
+#istaknuto-slatina::after{
+    content: 'Slatina ...';
+}
+
+#istaknuto-nogomet::after{
+    content: 'Nogomet';
+}
+
+#istaknuto-rukomet::after{
+    content: 'Rukomet - Košarka';
+}
+
+#istaknuto-ostali-sportovi::after{
+    content: 'Ostali sportovi';
+}
+
+/* slagerx3 ************************************************/
+
+.slagerx3{
+    grid-column: span 12;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+}
+
+.slagerx3-main{
+    grid-column: span 1;
+    position:relative;
+    height: min-content;
+}
+
+.slagerx3-oglas{
+    display: none;
+}
+
+.slagerx3-postdiv{
+    display: block;
+    width: 100%;
+    height: 179px;
+    overflow: hidden;
+}
+
+.slagerx3-post-pic {
+    width: 100%;
+    height: 179px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center center; 
+    will-change: transform; 
+}
+
+.slagerx3-main:hover .slagerx3-post-pic{
+    transform: scale(1.03);
+}
+
+.slagerx3-category {
+    display: inline-block;
+    margin:10px 0;
+}
+
+.slagerx3-post-title {
+    display: block;
+}
+
+#opcine-naslov{
+    padding-top: 56px;
+}
+
+.slagerx3-main h1 {
+    font-size: 20px;
+}
+
+/* Aside-news ***************************************************/
+
+.aside-news-mob{
+    display:none !important;
+}
+
+.aside-news{
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 300px;
+}
+
+.aside-news-main{
+    grid-column: span 1;
+    position:relative;
+    height: min-content;
+}
+
+.aside-news-postdiv{
+    display: block;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.aside-news-post-pic {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.aside-news-main:hover .aside-news-post-pic{
+    transform: scale(1.03);
+}
+
+.aside-news-category {
+    display: inline;
+    position: absolute;
+    top: 210px;
+}
+
+.aside-news-post-title {
+    display: block;
+    padding-top: 37px;
+}
+
+.aside-news-main h1 {
+    font-size: 18px;
+}
+
+/* slagerx4 *************************************************/
+
+.slagerx4, .slagerx4-all{
+    grid-column: span 12;
+    display: grid;
+    gap:30px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+}
+
+.slagerx4-main, .slagerx4-main-all{
+    grid-column: span 1;
+    position:relative;
+    height: min-content;
+}
+
+.slagerx4-postdiv, .slagerx4-postdiv-all{
+    display: block;
+    width: 100%;
+    height: 184px;
+    overflow: hidden;
+}
+
+.slagerx4-post-pic, .slagerx4-post-pic-all {
+    width: 100%;
+    height: 184px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center center; 
+    will-change: transform;
+}
+
+.slagerx4-main:hover .slagerx4-post-pic, .slagerx4-main-all:hover .slagerx4-post-pic-all{
+    transform: scale(1.03);
+}
+
+.slagerx4-category, .slagerx4-category-all {
+    display: inline-block;
+    margin:10px 0;
+}
+
+#category-promo>a>span{
+    color:#E1B64E !important;
+}
+
+#category-sport>a>span{
+    color:#4F9504 !important;
+}
+
+#category-posljednji-pozdrav>a>span{
+    color:#555555 !important;
+}
+
+.slagerx4-post-title, .slagerx4-post-title-all {
+    display: block;
+}
+
+.slagerx4-main h1, .slagerx4-main-all h1 {
+    font-size: 20px;
+}
+
+/* Pagination ************************************************/
+
+.pagination, .pagination-promo, .pagination-sport, .pagination-pp{
+    margin: 10px 0;
+    grid-column: span 4;
+}
+
+.page-numbers{
+    padding:5px 10px;
+    background-color: white;
+    border:1px solid #eb1e25;
+    border-radius: 1px;
+    color:black;
+}
+
+.pagination-sport .page-numbers{
+    border:1px solid #4F9504;
+}
+
+.pagination-promo .page-numbers{
+    border:1px solid #E1B64E;
+}
+
+.pagination-pp .page-numbers{
+    border:1px solid #555555;
+}
+
+.page-numbers:hover{
+    background-color: #eb1e25;
+    color: white;
+    border:1px solid #eb1e25;
+
+}
+
+.pagination-sport .page-numbers:hover{
+    background-color: #4F9504;
+    border: 1px solid #4F9504;
+}
+
+.pagination-promo .page-numbers:hover{
+    background-color: #E1B64E;
+    border: 1px solid #E1B64E;
+}
+
+.pagination-pp .page-numbers:hover{
+    background-color: #555555;
+    border: 1px solid #555555;
+}
+
+.current{
+    color:white;
+    background-color: #eb1e25;
+}
+
+.pagination-sport .current{
+    background-color: #4F9504;
+}
+
+.pagination-promo .current{
+    background-color: #E1B64E;
+}
+
+.pagination-pp .current{
+    background-color: #555555;
+}
+
+.pagination a, .pagination span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 35px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.navigacija-stranica {
+    grid-column: span 4;
+    text-align: center;
+}
+
+.navigacija-stranica>form{
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+}
+
+.navigacija-stranica input[type="submit"] {
+    padding: 8px 12px;
+    background-color: #eb1e25;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navigacija-stranica>form>label{
+    font-weight: 500;
+}
+
+#broj-stranice {
+    width: 100px; /* Adjust the width to fit the page number size */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Soft rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover/focus states */
+    text-align: center; /* Align text (numbers) centrally */
+}
+
+/* Hover effect */
+#broj-stranice:hover {
+    border-color: #eb1e25; /* Blue border on hover */
+}
+
+/* Focus effect (when clicked) */
+#broj-stranice:focus {
+    border-color: #eb1e25; /* Blue border on focus */
+    outline: none; /* Remove default browser outline */
+}
+
+.sport-broj:hover{
+    border-color: #4F9504 !important;
+}
+
+.sport-broj:focus{
+    border-color:#4F9504 !important;
+}
+
+.promo-broj:hover{
+    border-color: #E1B64E !important;
+}
+
+.promo-broj:focus{
+    border-color: #E1B64E !important;
+}
+
+.pp-broj:hover{
+    border-color: #555555 !important;
+}
+
+.pp-broj:focus{
+    border-color: #555555 !important;
+}
+
+.navigacija-stranica input[type="submit"]:hover {
+    background-color: #B0161C;
+}
+
+.sport-idi{
+    background-color: #4F9504 !important;
+}
+
+.sport-idi:hover{
+    background-color: #448005 !important;
+}
+
+.promo-idi{
+    background-color: #E1B64E !important;
+}
+
+.promo-idi:hover{
+    background-color: #b69240 !important;
+}
+
+.pp-idi{
+    background-color: #555555 !important;
+}
+
+.pp-idi:hover{
+    background-color: #444444 !important;
+}
+
+/* Najnovije-najcitanije ***********************************/
+
+.sticky {
+    position: -webkit-sticky !important; /* For Safari */
+    position: sticky !important;
+    top: 0 !important; /* Adjust the top offset as necessary */
+  }
+
+.relative{
+    position: relative;
+}
+
+.news-tabs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.news-tabs::after{
+    content: '';
+    background-color: #232323;
+    height: 5px;
+    width: 4px;
+    position: absolute;
+    left:calc(50% - 2px);
+    top:30px;
+    z-index: 1;
+}
+
+.news-tabs>div>button{
+    font-family: 'Merriweather';
+    font-size: 16px;
+    letter-spacing: -0.3px;
+}
+
+.news-tabs-div1{
+    grid-column: span 1;
+}
+
+.news-tabs-div1>button{
+    text-align: left;
+}
+
+.news-tabs-div2{
+    grid-column: span 1;
+}
+
+.news-tabs-div2>button{
+    text-align: right;
+}
+
+.post-item{
+    margin:10px 0;
+}
+
+.post-item-div{
+    margin-bottom: 5px;
+}
+
+.post-item-div>a{
+    font-size: 12px !important;
+}
+
+.news-naslov{
+    font-family: 'Merriweather', serif;
+    font-size:15px;
+    letter-spacing: -0.3px;
+    display: block;
+}
+
+.news-naslov:hover{
+    color:#555555;
+}
+
+.news-tab-content {
+    display: none; /* Hide all tab contents by default */
+}
+
+.news-tab-content.active {
+    display: block; /* Show the active tab content */
+}
+
+.news-tab {
+    cursor: pointer;
+    border: none;
+    background: white;
+    width: 100%;
+    padding:0 0 10px 0;
+    border-bottom: 5px solid #ebebeb;  
+}
+
+
+.news-tab.active {
+    font-weight: bold;
+    border-bottom: 5px solid #eb1e25;
+}
+
+/* Naslovi - Kategorija *********************************/
+
+.naslov{
+    grid-column: span 12;
+}
+
+.naslov h1{
+    display: block;
+    font-family: 'Merriweather' , serif;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #ebebeb;
+}
+
+.aside-news>.naslov h1{
+    font-size: 20px;
+}
+
+.icv-naslov{
+    grid-column: span 12;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding-top: 5px;
+    text-align: right;
+    letter-spacing: 0px;
+}
+
+.naslov h1:hover {
+    color: #555555;
+}
+
+        /* Promo *********/
+
+        .promo-border{
+            border-bottom: 5px solid #E1B64E !important;
+        }
+
+        #promo:hover{
+            color:#FFC131 !important;
+        }
+    
+        .featured-mid-main:hover #promo{
+            color:#FFC131 !important;
+        }
+
+        .featured-last-main:hover #promo{
+            color:#FFC131 !important;
+        }
+
+
+
+
+
+
+
+
+
