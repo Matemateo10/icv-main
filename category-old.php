@@ -2,7 +2,7 @@
 
 get_header(); 
 
-// Check the user agent for mobile device
+// Check the user agent for mobile devicedsafafsfasfa
 function is_mobile() {
     if (preg_match('/Mobile|Android|BlackBerry|IEMobile|Opera Mini/i', $_SERVER['HTTP_USER_AGENT'])) {
         return true;

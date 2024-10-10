@@ -1,233 +1,48 @@
 <?php
 
-$desktop_ad = 'oglas1.php';
-$mobile_ad = 'oglas1-mobile.php';
+include(get_ad_file(1));
 
-// Check the user agent for mobile device
-function is_mobile() {
-    return preg_match('/Mobile|Android|BlackBerry|IEMobile|Opera Mini/i', $_SERVER['HTTP_USER_AGENT']);
-}
-
-// Read the ad type from the cookie or detect it
-if (!isset($_COOKIE['adType'])) {
-    $adType = is_mobile() ? 'mobile-ad' : 'desktop-ad';
-    setcookie('adType', $adType, time() + 3600, "/"); // Set the cookie for an hour
-} else {
-    $adType = $_COOKIE['adType'];
-}
-
-// Determine the file path based on the ad type
-if ($adType === 'desktop-ad') {
-    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-} else {
-    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-}
-
-if (!empty($file_path) && file_exists($file_path)) {
-    include($file_path);
-} else {
-    echo 'File not found or invalid ad type';
-}
 ?>
-
 
 <section class="container-mainxaside-main">
 
     <main class="main-naslovnica">
 
-        <?php include ('featured.php') ?>
+        <?php include ('featured.php');
 
-        <?php
+        include(get_ad_file(2));
 
-            $desktop_ad = 'oglas2.php';
-            $mobile_ad = 'oglas2-mobile.php';
+        include ('vijesti.php');
 
-            // Read the ad type from the cookie
-            $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
+        include (get_ad_file(3));
 
-            if ($adType === 'desktop-ad') {
-                $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-            } else {
-                $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-            }
+        //include ('cestitke.php');
 
-            if (!empty($file_path) && file_exists($file_path)) {
-                include($file_path);
-            } else {
-                echo 'File not found or invalid ad type';
-            }
+        include ('promo.php');
 
-        ?>
-
-        <?php include ('vijesti.php') ?>
-
-            <?php
-
-                $desktop_ad = 'oglas3.php';
-                $mobile_ad = 'oglas3-mobile.php';
-
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
-
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
-
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
-
-            ?>
-
-        <?php include ('promo.php') ?>
-
-            <?php
-
-                $desktop_ad = 'oglas4.php';
-                $mobile_ad = 'oglas4-mobile.php';
-
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
-
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
-
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
-
-            ?>
+        include (get_ad_file(4));
         
-        <?php include ('virovitica.php') ?>
+        include ('virovitica.php');
 
-            <?php
+        include (get_ad_file(5));
 
-                $desktop_ad = 'oglas5.php';
-                $mobile_ad = 'oglas5-mobile.php';
+        include ('icv-price.php');
 
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
+        include (get_ad_file(6));   
+        
+        include ('zupanije.php');
 
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
+        include (get_ad_file(7));                  
 
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
+        include ('opcine.php');
 
-            ?>
+        include (get_ad_file(8));
 
-        <?php include ('icv-price.php') ?>
+        include ('sport.php');
 
-            <?php
+        include (get_ad_file(9));   
 
-                $desktop_ad = 'oglas6.php';
-                $mobile_ad = 'oglas6-mobile.php';
-
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
-
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
-
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
-
-            ?>
-
-        <?php include ('zupanije.php') ?>
-
-            <?php
-
-                $desktop_ad = 'oglas7.php';
-                $mobile_ad = 'oglas7-mobile.php';
-
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
-
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
-
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
-
-            ?>
-
-        <?php include ('opcine.php') ?>
-
-            <?php
-
-                $desktop_ad = 'oglas8.php';
-                $mobile_ad = 'oglas8-mobile.php';
-
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
-
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
-
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
-
-            ?>
-
-        <?php include ('sport.php') ?>
-
-            <?php
-
-                $desktop_ad = 'oglas9.php';
-                $mobile_ad = 'oglas9-mobile.php';
-
-                // Read the ad type from the cookie
-                $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
-
-                if ($adType === 'desktop-ad') {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
-                } else {
-                    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
-                }
-
-                if (!empty($file_path) && file_exists($file_path)) {
-                    include($file_path);
-                } else {
-                    echo 'File not found or invalid ad type';
-                }
-
-            ?>
-
-        <?php include ('icv-radio.php') ?>
+        include ('icv-radio.php');?>
 
     </main>
     

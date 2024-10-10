@@ -335,16 +335,31 @@ if (!empty($file_path) && file_exists($file_path)) {
             <?php
             // Get the current post's categories and tags as arrays of term IDs
             $categories = wp_get_post_categories(get_the_ID());
-            $tags = wp_get_post_tags(get_the_ID(), array('fields' => 'ids'));
+
+            $promo_category = get_category_by_slug('promo');
+
+            // Check if the post is in the promo category
+            if (in_array($promo_category->term_id, $categories)) {
+                // If the post is in the promo category, only show related posts from the promo category
+                $categories = array($promo_category->term_id);
+            }
+
+            // Get the current post's publication date
+            $post_date = get_the_date('Y-m-d', get_the_ID());
 
             // Prepare arguments for the related posts query
             $args = array(
                 'post__not_in' => array(get_the_ID()), // Exclude the current post from the results
                 'posts_per_page' => 4, // Number of related posts to display
-                'orderby' => 'date', // Display random related posts
-                'order' => 'DESC', // Show the newest posts first
-                'category__in' => $categories, // Show posts that share at least one category
-                'tag__in' => $tags, // Show posts that share at least one tag
+                'orderby' => 'rand', // Display random related posts
+                'category__in' => $categories, // Show posts that share at least one category (or only promo if applicable)
+                'date_query' => array( // Limit posts to within 10 days before and after the current post date
+                    array(
+                        'after' => date('Y-m-d', strtotime($post_date . ' -60 days')),
+                        'before' => date('Y-m-d', strtotime($post_date . ' +60 days')),
+                        'inclusive' => true, // Include posts published on the exact start and end dates
+                    ),
+                ),
             );
 
             // Query the related posts
@@ -375,18 +390,7 @@ if (!empty($file_path) && file_exists($file_path)) {
                     </a>
                     <!-- .slagerx4-postdiv -->
 
-                    <div class="slagerx4-category <?php $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
-
-                        // Check if the current URL contains "/sport"
-                        if (strpos($current_url, '/sport') !== false) {
-                            echo 'sport-category'; // Add a custom class if the URL contains "/sport"
-                        } elseif (strpos($current_url, '/promo') !== false) {
-                            echo 'promo-category'; // Add a custom class if the URL contains "/sport"
-                        } elseif (strpos($current_url, '/posljednji-pozdrav') !== false) {
-                            echo 'pp-category'; // Add a custom class if the URL contains "/sport"
-                        }
-                        
-                        ?>">
+                    <div class="slagerx4-category <?php change_category_color();?>">
 
                         <?php
 
@@ -430,6 +434,5 @@ if (!empty($file_path) && file_exists($file_path)) {
     </section>
 
 </main>
-<?php include ('nav/trazilica.php'); ?>
 
 <?php get_footer();?>

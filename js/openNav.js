@@ -2,7 +2,7 @@ function openNav() {
     
     var mobNav = document.getElementById('myNav');
 
-    var overlay = document.querySelector('.overlay');
+    var overlay = document.querySelector('.overlay-hamburger-nav');
 
     var computedRight = window.getComputedStyle(mobNav).getPropertyValue('right');
 

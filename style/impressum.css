@@ -73,12 +73,12 @@
     color:#E9E9E9;
 }
 
-#impressum{
-    column-gap: 50px;
-    max-width: 100%;
+.menu-impressum-menu-container>ul{
+    column-gap: 50px !important;
+    max-width: 100% !important;
 }
 
-#impressum>li>a{
-    font-size:14px;
+.menu-impressum-menu>ul>li>a{
+    font-size:14px !important;
 }
 

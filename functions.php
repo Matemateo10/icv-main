@@ -46,8 +46,8 @@ function enqueue_custom_scripts(){
     // Trazilica.js
     wp_enqueue_script('trazilica.js', get_template_directory_uri() . '/js/trazilica.js', array(), null, true );
 
-    // Trazilica2.js
-    wp_enqueue_script('trazilica2.js', get_template_directory_uri() . '/js/trazilica2.js', array(), null, true );
+    // LoadMore.js
+    wp_enqueue_script('loadMore.js', get_template_directory_uri() . '/js/loadMore.js', array(), null, true );
 
     // OpenNav.js
     wp_enqueue_script('openNav.js', get_template_directory_uri() . '/js/openNav.js', array(), null, true );
@@ -64,7 +64,6 @@ function enqueue_custom_scripts(){
     // scrollToTop.js
     wp_enqueue_script('scrollToTop.js', get_template_directory_uri() . '/js/scrollToTop.js', array(), null, true);
 
-    wp_enqueue_script('myAjaxScript.js', get_template_directory_uri() . '/js/myAjaxScript.js', array('jquery'), null, true);
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
@@ -110,6 +109,25 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 5);
 // Registracija menua
 function register_icv_menus() {
     register_nav_menu('footer-menu',__( 'Footer Menu' ));
+
+    register_nav_menu('header-menu', __('Header Menu' ));
+
+    register_nav_menu('vijesti-menu', __('Vijesti Menu'));
+
+    register_nav_menu('zupanije-menu', __('Zupanije Menu'));
+
+    register_nav_menu('opcine-menu', __('Opcine Menu'));
+
+    register_nav_menu('sport-menu', __('Sport Menu'));
+
+    register_nav_menu('icv-radio-menu', __('ICV-RADIO Menu'));
+
+    register_nav_menu('impressum-menu', __('Impressum Menu'));
+
+    register_nav_menu('mob-header-menu', __('Mob Menu'));
+
+    register_nav_menu('mob-hamburger-menu', __('Mob Hamburger Menu'));
+
   }
   add_action( 'init', 'register_icv_menus' );
 
@@ -121,6 +139,14 @@ function custom_excerpt_length($excerpt) {
     return 30; // Change this number to the number of words you want in the excerpt
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+//
+//
+// Excerpt change
+function custom_excerpt_more($more) {
+    return ' ...'; // Replace [...] with just dots
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
 
 // Adding Error Page
 
@@ -211,50 +237,7 @@ function track_post_views($post_id) {
 add_action('template_redirect', 'track_post_views');
 
 
-// Function to track post views using cookies - sa error logovima
-/*function track_post_views($post_id) {
-    if (!is_single()) {
-        error_log('Not a single post page.');
-        return;
-    }
 
-    if (empty($post_id)) {
-        global $post;
-        $post_id = $post->ID;
-    }
-
-    // Define a unique cookie name for this post
-    $cookie_name = 'post_viewed_' . $post_id;
-
-    // Check if the cookie is set
-    if (!isset($_COOKIE[$cookie_name])) {
-        // Increment the post view count
-        $count_key = 'post_views_count';
-        $count = get_post_meta($post_id, $count_key, true);
-
-        if ($count == '') {
-            $count = 0;
-            delete_post_meta($post_id, $count_key);
-            add_post_meta($post_id, $count_key, '0');
-        } else {
-            $count++;
-            update_post_meta($post_id, $count_key, $count);
-        }
-
-        // Log the view increment
-        error_log('Incremented view count for post ID ' . $post_id . '. New count: ' . $count);
-
-        // Set the cookie to expire in 1 hour
-        setcookie($cookie_name, 'true', time() + 3600, '/');
-        
-        // Log the cookie setting
-        error_log('Set cookie for post ID ' . $post_id . ' with name ' . $cookie_name);
-    } else {
-        // Log that the cookie already exists
-        error_log('Cookie already exists for post ID ' . $post_id);
-    }
-}
-add_action('template_redirect', 'track_post_views');*/
 
 // Function to display post views
 function get_post_views($post_id) {
@@ -472,19 +455,37 @@ add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
 
 //
 //
+//Check if it is mobile
+function is_mobile() {
+    return preg_match('/Mobile|Android|BlackBerry|IEMobile|Opera Mini/i', $_SERVER['HTTP_USER_AGENT']);
+}
+
+//
+//
 // Function to determine which ad to show
-function get_ad_file($index) {
+function get_ad_file($index): string {
     
     $desktop_ad = 'oglas' . $index . '.php';
-    $mobile_ad = 'oglas-mobile' . $index . '.php';
+    $mobile_ad = 'oglas' . $index . '-mobile.php';
 
     // Get current category object
     $category = get_queried_object();
 
-    // Ensure we're working with a valid category object
-    if (is_category() && !empty($category)) {
-        // Retrieve the slug of the current category
-        $category_slug = $category->slug;
+    // Initialize variables for parent and child categories
+    $parent_category_slug = '';
+    $child_category_slug = '';
+
+    // Check if we're on a category page
+    if ($category && is_category()) {
+        if ($category->parent != 0) {
+            // If it's a child category, get the parent category
+            $parent_category = get_category($category->parent);
+            $parent_category_slug = $parent_category->slug;
+            $child_category_slug = $category->slug; // current category slug as child
+        } else {
+            // If it's a parent category
+            $parent_category_slug = $category->slug;
+        }
     }
     
     // Set ad type based on mobile or desktop
@@ -495,12 +496,174 @@ function get_ad_file($index) {
         $adType = $_COOKIE['adType'];
     }
 
-    // Build the file path dynamically using the category slug
+    // Build the file path based on the current category hierarchy
+    $base_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/';
+    $naslovnica = 'naslovnica/';
+    
+    // If we have both parent and child categories, include both in the path
+    if (!empty($parent_category_slug) && !empty($child_category_slug)) {
+        $category_path = $parent_category_slug . '/' . $child_category_slug . '/';
+    } elseif (!empty($parent_category_slug)) {
+        // If it's only a parent category, use just that
+        $category_path = $parent_category_slug . '/';
+    } elseif (empty($parent_category_slug)){
+        $category_path = $naslovnica;
+    }
+
+    // Return the appropriate ad file based on the ad type
     if ($adType === 'desktop-ad') {
-        return ABSPATH . 'wp-content/themes/icvtheme/oglasi/' . $category_slug . '/' . $desktop_ad;
+        return $base_path . $category_path . $desktop_ad;
     } else {
-        return ABSPATH . 'wp-content/themes/icvtheme/oglasi/' . $category_slug . '/' . $mobile_ad;
+        return $base_path . $category_path . $mobile_ad;
     }
 }
 
+//
+//
+// Include secondary navigation
+function get_secondary_nav_file() {
+    // Get current category object
+    $category = get_queried_object();
+
+    // Initialize variables for parent and child categories
+    $parent_category_slug = '';
+
+    // Check if we're on a category page
+    if ($category && is_category()) {
+        if ($category->parent != 0) {
+            // If it's a child category, get the parent category
+            $parent_category = get_category($category->parent);
+            $parent_category_slug = $parent_category->slug;
+        } else {
+            // If it's a parent category
+            $parent_category_slug = $category->slug;
+        }
+    }
+
+    // Build the secondary navigation path based on parent category
+    if (!empty($parent_category_slug)) {
+        return ABSPATH . 'wp-content/themes/icvtheme/nav/secondary-nav/' . $parent_category_slug . '.php';
+    }
+}
+
+//
+//
+// Change category color depending on which URL user is
+
+function change_category_color(){
+    
+    $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
+
+    // Check if the current URL contains "/sport"
+    if (strpos($current_url, '/sport') !== false) {
+        echo 'sport-category'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/promo') !== false) {
+        echo 'promo-category'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/posljednji-pozdrav') !== false) {
+        echo 'pp-category'; // Add a custom class if the URL contains "/sport"
+    }
+    
+}
+
+
+function change_pagination_color(){
+    
+    $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
+
+    // Check if the current URL contains "/sport"
+    if (strpos($current_url, '/sport') !== false) {
+        echo 'pagination-sport'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/promo') !== false) {
+        echo 'pagination-promo'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/posljednji-pozdrav') !== false) {
+        echo 'pagination-pp'; // Add a custom class if the URL contains "/sport"
+    } else {
+        echo 'pagination';
+    }
+    
+}
+
+
+function change_pagination_broj(){
+
+    $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
+
+    // Check if the current URL contains "/sport"
+    if (strpos($current_url, '/sport') !== false) {
+        echo 'sport-broj'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/promo') !== false) {
+        echo 'promo-broj'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/posljednji-pozdrav') !== false) {
+        echo 'pp-broj'; // Add a custom class if the URL contains "/sport"
+    } else {
+        echo '';
+    }
+
+}
+
+
+function change_pagination_idi(){
+
+    $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
+
+    // Check if the current URL contains "/sport"
+    if (strpos($current_url, '/sport') !== false) {
+        echo 'sport-idi'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/promo') !== false) {
+        echo 'promo-idi'; // Add a custom class if the URL contains "/sport"
+    } elseif (strpos($current_url, '/posljednji-pozdrav') !== false) {
+        echo 'pp-idi'; // Add a custom class if the URL contains "/sport"
+    } else {
+        echo '';
+    }
+
+}
+
+
+// Function to track post views using cookies - sa error logovima
+/*function track_post_views($post_id) {
+    if (!is_single()) {
+        error_log('Not a single post page.');
+        return;
+    }
+
+    if (empty($post_id)) {
+        global $post;
+        $post_id = $post->ID;
+    }
+
+    // Define a unique cookie name for this post
+    $cookie_name = 'post_viewed_' . $post_id;
+
+    // Check if the cookie is set
+    if (!isset($_COOKIE[$cookie_name])) {
+        // Increment the post view count
+        $count_key = 'post_views_count';
+        $count = get_post_meta($post_id, $count_key, true);
+
+        if ($count == '') {
+            $count = 0;
+            delete_post_meta($post_id, $count_key);
+            add_post_meta($post_id, $count_key, '0');
+        } else {
+            $count++;
+            update_post_meta($post_id, $count_key, $count);
+        }
+
+        // Log the view increment
+        error_log('Incremented view count for post ID ' . $post_id . '. New count: ' . $count);
+
+        // Set the cookie to expire in 1 hour
+        setcookie($cookie_name, 'true', time() + 3600, '/');
+        
+        // Log the cookie setting
+        error_log('Set cookie for post ID ' . $post_id . ' with name ' . $cookie_name);
+    } else {
+        // Log that the cookie already exists
+        error_log('Cookie already exists for post ID ' . $post_id);
+    }
+}
+add_action('template_redirect', 'track_post_views');*/
 ?>
+
+

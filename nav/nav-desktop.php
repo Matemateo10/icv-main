@@ -12,85 +12,7 @@
     </article>
     <!-- .nav-logo -->
 
-    <article class="main-menu">
-
-        <ul class="main-menu-ul">
-
-            <li>
-
-                <a class="vijesti-c-c" href="/vijesti">VIJESTI</a>
-                <!-- .vijesti-c-c -->
-            
-            </li>
-
-            <li>
-
-                <a class="virovitica-c-c" href="/virovitica">VIROVITICA</a>
-                <!-- .virovitica-c-c -->
-
-            </li>
-
-            <li>
-                
-                <a class="zupanije-c-c" href="/zupanije">ŽUPANIJE</a>
-                <!-- .zupanije-c-c -->
-
-
-            </li>
-
-            <li>
-
-                <a class="opcine-c-c" href="/opcine">OPĆINE</a>
-
-            </li>
-
-            <li>
-
-                <a class="sport-c-c" href="/sport">SPORT</a>
-                <!-- sport-c-c -->
-
-            </li>
-
-            <li>
-
-                <a class="promo-c-c" href="/promo">PROMO</a>
-                <!-- promo-c-c -->
-
-            </li>
-
-            <li>
-
-                <a class="marketing-c-c" href="/marketing">MARKETING</a>
-                <!-- marketing-c-c -->
-
-            </li>
-
-            <li>
-
-                <a class="radio-c-c" href="/icv-radio">ICV-RADIO</a>
-                <!-- radio-c-c -->
-
-            </li>
-
-            <li>
-
-                <a class="posljednji-c-c" href="/posljednji-pozdrav"><img src="<?php echo get_stylesheet_directory_uri(); ?>/slike/cross.png" alt="posljednji pozdrav"></a>
-                <!-- posljednji-c-c -->
-            
-            </li>
-
-            <li>
-
-                <a class="vt-list-c-c" target="_blank" href="https://library.foi.hr/lib/knjiga.php?C=130&grupa=Gradska%20knji%9Enica%20i%20%E8itaonica%20Virovitica&vrsta=ZBI&H=virovitica"><img src="<?php echo get_stylesheet_directory_uri(); ?>/slike/vt-list.png" alt="virovitički list"></a>
-                <!-- vt-list-c-c -->
-            
-            </li>
-
-        </ul>
-        <!-- .main-menu-ul -->
-
-    </article>
-    <!-- .menu -->
+    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?> 
 
     <article class="social">
 
@@ -122,6 +44,7 @@
 
     </article>
     <!-- .social -->
+
 
 </section>
 <!-- .container .grid-12 -->

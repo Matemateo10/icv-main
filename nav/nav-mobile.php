@@ -35,63 +35,7 @@
 
     </article>
 
-    <article class="main-menu-mob">
-
-        <ul class="main-menu-ul-mob">
-
-            <li>
-
-                <a href="/vijesti">Vijesti</a>
-            
-            </li>
-
-            <li>
-
-                <a href="/virovitica">Virovitica</a>
-
-            </li>
-
-            <li>
-                
-                <a href="/zupanije">Županije</a>
-
-            </li>
-
-            <li>
-
-                <a href="/opcine">Općine</a>
-
-            </li>
-
-            <li>
-
-                <a href="/sport">Sport</a>
-
-            </li>
-
-            <li>
-
-                <a href="/promo">Promo</a>
-
-            </li>
-
-            <li>
-
-                <a href="/marketing">Marketing</a>
-
-            </li>
-
-            <li>
-
-                <a href="/icv-radio">ICV-radio</a>
-
-            </li>
-
-        </ul>
-        <!-- .main-menu-ul -->
-
-    </article>
-    <!-- .menu -->
+    <?php wp_nav_menu( array( 'theme_location' => 'mob-header-menu' ) ); ?>
 
 </section>
 <!-- container-nav grid-12-nav nav-mob -->

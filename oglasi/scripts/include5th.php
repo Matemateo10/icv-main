@@ -1,5 +1,5 @@
 <?php
-    // Include fourth ad
+    // Include fifth ad
     $desktop_ad = 'oglas5.php';
     $mobile_ad = 'oglas5-mobile.php';
     $file_path = get_ad_file($desktop_ad, $mobile_ad);

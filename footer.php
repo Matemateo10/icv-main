@@ -59,24 +59,7 @@ include ('nav/trazilica.php');
     </section>
     <!-- footer-logo -->
 
-    <section class="footer-navigacija">
-
-        <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-
-        <!--<a href="/impressum">Impressum</a>
-
-        <a href="/pristup-informacijama">Pristup informacijama</a>
-
-        <a href="/pravila-ponasanja">Pravila ponašanja</a>
-
-        <a href="/uvjeti-koristenja">Uvjeti korištenja</a>
-
-        <a href="/vazni-dokumenti">Važni dokumenti</a>
-
-        <a href="/kontakt">Kontakt</a>-->
-
-    </section>
-    <!-- footer-navigacija -->
+    <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 
     <div id="prozor-arrowa" class="<?php $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
 

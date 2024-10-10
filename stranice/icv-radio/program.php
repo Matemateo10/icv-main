@@ -23,7 +23,7 @@
 <?php
 
 // Construct the full path to the file
-$file_path = ABSPATH . 'wp-content/themes/icvtheme/nav/secondary-nav/icv-radio-sec-nav.php';
+$file_path = ABSPATH . 'wp-content/themes/icvtheme/nav/secondary-nav/icv-radio.php';
 
 // Check if the file exists before including it
 if (file_exists($file_path)) {

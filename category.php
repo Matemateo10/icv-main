@@ -2,142 +2,49 @@
 
 get_header(); 
 
-// Check the user agent for mobile device
-function is_mobile() {
-    if (preg_match('/Mobile|Android|BlackBerry|IEMobile|Opera Mini/i', $_SERVER['HTTP_USER_AGENT'])) {
-        return true;
-    } else {
-        return false;
-    }
+if (is_category(array('aktualno','crna-kronika','hrvatska','politika','zanimljivosti','fotka-dana','vjerski-zivot','virovitica','viroviticko-podravska-zupanija','koprivnicko-krizevacka-zupanija','osjecko-baranjska-zupanija','pitomaca-suhopolje-s-bukovica-gradina-lukac','orahovica-cacinci-mikleus-zdenci-crnac','slatina-sopje-cadavica-vocin-n-bukovica','nogomet','rukomet-kosarka','ostali-sportovi','skolski-sport','sportski-vremeplov','promo','icv-radio','icv-price','posljednji-pozdrav', 'promo', 'posljednji-pozdrav'))) {
+
+    include(get_ad_file(1));
+
+} else{  
+ 
 }
 
-// Function to determine which ad to show
-function get_ad_file($desktop_ad, $mobile_ad) {
-    // Get current category object
-    $category = get_queried_object();
+if (is_category(array('aktualno','crna-kronika','hrvatska','politika','zanimljivosti','fotka-dana','vjerski-zivot','virovitica','viroviticko-podravska-zupanija','koprivnicko-krizevacka-zupanija','osjecko-baranjska-zupanija','pitomaca-suhopolje-s-bukovica-gradina-lukac','orahovica-cacinci-mikleus-zdenci-crnac','slatina-sopje-cadavica-vocin-n-bukovica','nogomet','rukomet-kosarka','ostali-sportovi', 'skolski-sport', 'sportski-vremeplov','icv-radio'))) {
+    include(get_secondary_nav_file());
 
-    // Initialize variables for parent and child categories
-    $parent_category_slug = '';
-    $child_category_slug = '';
-
-    // Check if we're on a category page
-    if ($category && is_category()) {
-        if ($category->parent != 0) {
-            // If it's a child category, get the parent category
-            $parent_category = get_category($category->parent);
-            $parent_category_slug = $parent_category->slug;
-            $child_category_slug = $category->slug; // current category slug as child
-        } else {
-            // If it's a parent category
-            $parent_category_slug = $category->slug;
-        }
-    }
-
-    // Set default ad type if no cookie is set
-    if (!isset($_COOKIE['adType'])) {
-        if (is_mobile()) {
-            $adType = 'mobile-ad';
-        } else {
-            $adType = 'desktop-ad';
-        }
-        setcookie('adType', $adType, time() + 3600, "/"); // Set the cookie for an hour
-    } else {
-        $adType = $_COOKIE['adType'];
-    }
-
-    // Build the file path based on the current category hierarchy
-    $base_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/';
-    
-    // If we have both parent and child categories, include both in the path
-    if (!empty($parent_category_slug) && !empty($child_category_slug)) {
-        $category_path = $parent_category_slug . '/' . $child_category_slug . '/';
-    } elseif (!empty($parent_category_slug)) {
-        // If it's only a parent category, use just that
-        $category_path = $parent_category_slug . '/';
-    }
-
-    // Return the appropriate ad file based on the ad type
-    if ($adType === 'desktop-ad') {
-        return $base_path . $category_path . $desktop_ad;
-    } else {
-        return $base_path . $category_path . $mobile_ad;
-    }
+} else{   
 }
 
-// Include first ad
-$desktop_ad = 'oglas1.php';
-$mobile_ad = 'oglas1-mobile.php';
-$file_path = get_ad_file($desktop_ad, $mobile_ad);
-if (!empty($file_path) && file_exists($file_path)) {
-    include($file_path);
-} else {
-    echo 'File not found or invalid ad type';
-}
 
 ?>
 
-<?php
-// Include secondary navigation for opcine
-function get_secondary_nav_file() {
-    // Get current category object
-    $category = get_queried_object();
-
-    // Initialize variables for parent and child categories
-    $parent_category_slug = '';
-
-    // Check if we're on a category page
-    if ($category && is_category()) {
-        if ($category->parent != 0) {
-            // If it's a child category, get the parent category
-            $parent_category = get_category($category->parent);
-            $parent_category_slug = $parent_category->slug;
-        } else {
-            // If it's a parent category
-            $parent_category_slug = $category->slug;
-        }
-    }
-
-    // Build the secondary navigation path based on parent category
-    if (!empty($parent_category_slug)) {
-        return ABSPATH . 'wp-content/themes/icvtheme/nav/secondary-nav/' . $parent_category_slug . '.php';
-    }
-}
-
-$secondary_nav_path = get_secondary_nav_file();
-if (file_exists($secondary_nav_path)) {
-    include($secondary_nav_path);
-}
-?>
-
-<!--<?php
-    // Get the current category object
-    $current_category = get_queried_object();
-
-    // Get the ID of the current category
-    $category_id = $current_category->term_id;
-
-    // Get the URL of the current category
-    $category_link = get_category_link( $category_id );
-
-    // Output the category link (optional)
-    echo '<a href="' . esc_url( $category_link ) . '">' . esc_html( $current_category->name ) . '</a>';
-?>-->
-
-
-<!-- Print a link to this category
-<a href="<?php echo esc_url( $category_link ); ?>" title="Category Name">Category Name</a>-->
 <section class="container-mainxaside">
 
     <main class="main-naslovnica">
 
         <article class="featured">
+         
+            <a class="naslov" href="<?php
+
+                $current_category = get_queried_object();
+
+                echo get_category_link($current_category->term_id);
+
+            ?>">
+
+                <h1><?php echo $current_category->name;?></h1>
+                
+            </a>
+            <!-- .naslov -->
+
+            <p class="icv-naslov mb-60">INFORMATIVNI CENTAR VIROVITICA</p>
 
             <div class="slagerx4-all">
             
-                
                 <?php
                 // Query and display posts from the current category
-                $posts_per_page = 12; // Number of posts per page
+                $posts_per_page = 24; // Number of posts per page
                 $paged = get_query_var('paged');
                 if (!$paged) {
                     $paged = 1;
@@ -151,6 +58,7 @@ if (file_exists($secondary_nav_path)) {
                     'category_name' => $current_category->slug, // Get posts using the current category slug
                     'posts_per_page' => $posts_per_page,
                     'paged' => $paged,
+                    'no_found_rows' => false,
                 );
 
                 $query = new WP_Query($args);
@@ -173,11 +81,15 @@ if (file_exists($secondary_nav_path)) {
                         <a class="slagerx4-postdiv-all" href="<?php echo $post_permalink; ?>">
                             <?php if (has_post_thumbnail()) {
                                 the_post_thumbnail('post-thumbnail', array('class' => 'slagerx4-post-pic-all'));
-                            } ?>
+                            } else {
+                                // If there is no featured image, display a default image from your folder
+                                $default_image_url = get_stylesheet_directory_uri() . '/slike/default.jpg';
+                                echo '<img src="' . $default_image_url . '" class="slagerx4-post-pic-all" alt="Default">';
+                            }?>
                         </a>
                         <!-- .slagerx4-postdiv-all -->
 
-                        <div class="slagerx4-category-all">
+                        <div class="slagerx4-category-all <?php change_category_color(); ?>">
                             <?php
                             // Include categories file
                             $file_path = ABSPATH . 'wp-content/themes/icvtheme/pomocne/kategorije.php';
@@ -200,19 +112,21 @@ if (file_exists($secondary_nav_path)) {
                     $count++; // Increment the counter
                     }
 
-                    // Pagination
-                    $big = 999999999; // Set a large value for the 'total' parameter
-                    echo '<div class="pagination">';
+                   // Pagination
+                    $big = 999999; // Set a large value for the 'total' parameter
+
+                    // Output the pagination links wrapped in a div with a custom class
+                    ?><div class="<?php change_pagination_color()?>"><?php
                     echo paginate_links(array(
                         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format' => '?paged=%#%',
-                        'current' => max(1, $paged),
+                        'current' => max(1, get_query_var('paged')),
                         'total' => $query->max_num_pages,
                         'prev_text' => '&laquo;',
                         'next_text' => '&raquo;',
-                    ));
-                    echo '</div>';
-                    ?>
+                    ));?>
+                    </div>
+                    
 
                     <!-- Navigacija po stranicama -->
                     <div class="navigacija-stranica">
@@ -220,8 +134,8 @@ if (file_exists($secondary_nav_path)) {
                         <form action="" method="get">
 
                             <label for="broj-stranice">Pretraži po broju stranice:</label>
-                            <input type="number" id="broj-stranice" name="paged" min="1" max="<?php echo $query->max_num_pages; ?>" value="<?php echo $paged; ?>">
-                            <input type="submit" value="Idi">
+                            <input type="number" class="<?php change_pagination_broj();?>" id="broj-stranice" name="paged" min="1" max="<?php echo $query->max_num_pages; ?>" value="<?php echo $paged; ?>">
+                            <input type="submit" class="<?php change_pagination_idi();?>" value="Idi">
 
                         </form>
 

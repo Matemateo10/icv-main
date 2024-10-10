@@ -232,12 +232,12 @@
         height: 226px;
     }
 
-    .main-menu-mob{
+    .menu-mob-menu-container{
         grid-column: span 12;
         background-color: #EB1E25;
     }
-
-    .main-menu-ul-mob{
+    
+    .menu-mob-menu-container>ul{
         display:flex;
         height:50px;
         align-items: center;
@@ -245,7 +245,7 @@
         white-space: nowrap;
     }
   
-    .main-menu-ul-mob>li>a{
+    .menu-mob-menu-container>ul>li>a{
         padding: 10px;
         color:white;
         display: block;
@@ -369,25 +369,25 @@
     }
 
     /* Set the scrollbar height and background color for all the elements */
-    .slagerx3::-webkit-scrollbar, .slagerx4::-webkit-scrollbar, .vijesti-nav::-webkit-scrollbar, .sport-nav::-webkit-scrollbar{
+    .slagerx3::-webkit-scrollbar, .slagerx4::-webkit-scrollbar, .secondary-nav>div>ul::-webkit-scrollbar{
         height: 2px; /* Increase height for visibility */
         background-color: white; /* Background of scrollbar (track color) */
         padding-bottom: 20px;
     }
 
     /* Define the scrollbar track appearance (gray background) */
-    .slagerx3::-webkit-scrollbar-track, .slagerx4::-webkit-scrollbar-track, .vijesti-nav::-webkit-scrollbar-track, .sport-nav::-webkit-scrollbar-track{
+    .slagerx3::-webkit-scrollbar-track, .slagerx4::-webkit-scrollbar-track, .secondary-nav>div>ul::-webkit-scrollbar-track{
         background: #ebebeb; /* Track color (non-draggable area) */
     }
 
     /* Define the scrollbar thumb appearance (red when dragging, black when idle) */
-    .slagerx3::-webkit-scrollbar-thumb, .slagerx4::-webkit-scrollbar-thumb, .vijesti-nav::-webkit-scrollbar-thumb{
+    .slagerx3::-webkit-scrollbar-thumb, .slagerx4::-webkit-scrollbar-thumb, .secondary-nav>div>ul::-webkit-scrollbar-thumb{
         background: #EB1E25; /* Default thumb color */
         border-radius: 4px; /* Rounded corners for the thumb */
         transition: background-color 0.3s ease; /* Smooth transition when dragging */
     }
 
-    .sport-nav::-webkit-scrollbar-thumb, .sport-slagerx3::-webkit-scrollbar-thumb{
+    .menu-sport-container>ul::-webkit-scrollbar-thumb, .sport-slagerx3::-webkit-scrollbar-thumb{
         background: #4F9504 !important; /* Default thumb color */
         border-radius: 4px; /* Rounded corners for the thumb */
         transition: background-color 0.3s ease; /* Smooth transition when dragging */
@@ -405,17 +405,17 @@
         transition: background-color 0.3s ease; /* Smooth transition when dragging */
     }
 
-    .main-menu-ul-mob::-webkit-scrollbar{
+    .menu-mob-menu-container>ul::-webkit-scrollbar{
         height: 2px; /* Increase height for visibility */
         background-color: white; /* Background of scrollbar (track color) */
         padding-bottom: 20px;
     }
 
-    .main-menu-ul-mob::-webkit-scrollbar-track {
+    .menu-mob-menu-container>ul::-webkit-scrollbar-track {
         background: #EB1E25;
     }
 
-    .main-menu-ul-mob::-webkit-scrollbar-thumb {
+    .menu-mob-menu-container>ul::-webkit-scrollbar-thumb {
         background: #ebebeb; 
     }
 
@@ -472,14 +472,14 @@
         padding-top:0;
     }
 
-    .vijesti-nav, .sport-nav{
+    .secondary-nav>div>ul{
         max-width: 1200px;
         justify-content: center;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    #opcine-nav{
+    .menu-opcine-container>ul{
         justify-content: left;
         padding: 0 10px;
     }
@@ -546,6 +546,7 @@
 
     .trazilica-pic-container{
         width:100%;
+        height:auto;
     }
 
     .trazilica-pic-link{
@@ -663,7 +664,7 @@
 
 @media (max-width:767px){
 
-    .main-menu-ul-mob{
+    .main-menu-ul-mob, .menu-mob-menu-container>ul{
         justify-content: left;
         overflow-x: scroll;
     }
@@ -713,7 +714,7 @@
         margin:unset;
     }
 
-    .vijesti-nav, .sport-nav{
+    .secondary-nav>div>ul{
         justify-content: left;
         padding:0 10px;
     }
@@ -722,7 +723,7 @@
         grid-column: span 4;
     }
 
-    .footer-navigacija{
+    .menu-footer-container{
         display: none;
     }
 

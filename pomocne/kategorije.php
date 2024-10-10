@@ -18,6 +18,7 @@
         'nogomet' => '/sport/nogomet',
         'rukomet-kosarka' => '/sport/rukomet-kosarka',
         'ostali-sportovi' => '/sport/ostali-sportovi',
+        'skolski-sport' => '/sport/skolski-sport',
         'sportski-vremeplov' => '/sport/sportski-vremeplov',
         'promo' => '/promo',
         'icv-radio' => '/icv-radio',

@@ -17,7 +17,8 @@
         </div>
 
     </form>
-
+    
 <div class="overlay"></div>
+<div onclick="openNav()" class="overlay-hamburger-nav"></div>
 
 

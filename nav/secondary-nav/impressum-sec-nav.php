@@ -1,4 +1,4 @@
-<nav class="container-nav2nd">
+<nav class="secondary-nav">
 
     <?php 
 
@@ -41,52 +41,7 @@
     ?>
 
 
-    <ul class="vijesti-nav" id="impressum">
-
-        <li>
-
-            <a class="impressum-c-c" href="/impressum">Impressum</a>
-            <!-- .impressum-c-c -->
-
-        </li>
-
-        <li>
-
-            <a class="pristup-informacijama-c-c" href="/pristup-informacijama">Pristup informacijama</a>
-            <!-- .pristup-informacijama-c-c -->
-
-        </li>
-
-        <li>
-
-            <a class="pravila-ponasanja-c-c" href="/pravila-ponasanja">Pravila ponašanja</a>
-            <!-- .pravila-ponasanja-c-c -->
-
-        </li>
-
-        <li>
-
-            <a class="uvjeti-koristenja-c-c" href="/uvjeti-koristenja">Uvjeti korištenja</a>
-            <!-- .uvjeti-koristenja-c-c -->
-
-        </li>
-
-        <li>
-
-            <a class="vazni-dokumenti-c-c" href="/vazni-dokumenti">Važni dokumenti</a>
-            <!-- .vazni-dokumenti-c-c -->
-
-        </li>
-
-        <li>
-
-            <a class="kontakt-c-c" href="/kontakt">Kontakt</a>
-            <!-- .kontakt-c-c -->
-
-        </li>
-
-    </ul>
-    <!-- .vijesti-nav #impressum -->
+<?php wp_nav_menu( array( 'theme_location' => 'impressum-menu' ) ); ?>
 
 </nav>
-<!-- .container-nav -->
+<!-- .secondary-nav -->

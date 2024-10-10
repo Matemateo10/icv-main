@@ -147,6 +147,11 @@
                     
                         <?php if (has_post_thumbnail()) {
                             the_post_thumbnail('post-thumbnail', array('class' => 'slagerx3-post-pic'));
+                        }
+                        else {
+                            // If there is no featured image, display a default image from your folder
+                            $default_image_url = get_stylesheet_directory_uri() . '/slike/default.jpg';
+                            echo '<img src="' . $default_image_url . '" class="slagerx3-post-pic" alt="Default">';
                         }?>
                         <!-- .slagerx3-post-pic -->
 
