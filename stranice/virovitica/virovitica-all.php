@@ -1,5 +1,20 @@
 <article class="featured">
 
+    <a class="naslov" href="<?php
+
+    $current_category = get_queried_object();
+
+    echo get_category_link($current_category->term_id);
+
+    ?>">
+
+    <h1><?php echo $current_category->name;?></h1>
+
+    </a>
+    <!-- .naslov -->
+
+    <p class="icv-naslov mb-60">INFORMATIVNI CENTAR VIROVITICA</p>
+
     <div class="slagerx4-all">
         <?php
         $posts_per_page = 24; // Number of posts per page

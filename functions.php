@@ -108,6 +108,7 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 5);
 //
 // Registracija menua
 function register_icv_menus() {
+    
     register_nav_menu('footer-menu',__( 'Footer Menu' ));
 
     register_nav_menu('header-menu', __('Header Menu' ));
