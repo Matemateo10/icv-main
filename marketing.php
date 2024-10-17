@@ -59,7 +59,7 @@
             
                 <div>
 
-                    <a href="javascript:void(0)" onclick="openForm()">kontaktirajte nas</a>
+                    <a href="/kontakt">kontaktirajte nas</a>
 
                 </div>
 
@@ -85,7 +85,7 @@
                 </article>
                 <!-- .marketing-2dio-gore -->
 
-                <article class="marketing-2dio-dolje">
+                <!--<article class="marketing-2dio-dolje">
                     
                     <div id="m-d-1" class="disable-hover hover-hide-white-arr">
 
@@ -94,7 +94,7 @@
                         <div id="marketing-padajuci-main" style="display: none;">
 
                             
-                            <!-- OVAJ DIO TREBA ISPUNITI ODGOVRAJUĆIM SADRŽAJEM -->
+                            OVAJ DIO TREBA ISPUNITI ODGOVRAJUĆIM SADRŽAJEM
 
                             
                             <div class="button-marketing">
@@ -114,7 +114,7 @@
                         <div id="marketing-padajuci-main-2" style="display: none;">
                             
 
-                            <!-- OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM -->
+                            OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM
 
                             <div class="button-marketing">
 
@@ -133,7 +133,7 @@
                         <div id="marketing-padajuci-main-3" style="display: none;">
 
                             
-                            <!-- OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM -->
+                            OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM
 
 
                             <div class="button-marketing">
@@ -154,7 +154,7 @@
                         <div id="marketing-padajuci-main-4" style="display: none;">
                         
                         
-                            <!-- OVAJ DIO TREBA ISPUNITI ODGOVRAJUĆIM SADRŽAJEM -->
+                            OVAJ DIO TREBA ISPUNITI ODGOVRAJUĆIM SADRŽAJEM
 
 
                             <div class="button-marketing">
@@ -175,7 +175,7 @@
 
 
 
-                            <!-- OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM -->
+                            OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM
 
                                
 
@@ -198,7 +198,7 @@
                         
                       
 
-                            <!-- OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM -->
+                            OVAJ DIO TREBA ISPUNITI ODGOVARAJUĆIM SADRŽAJEM
 
                                
                             <div class="button-marketing">
@@ -213,7 +213,23 @@
 
 
                 </article>
-                <!-- .marketing-2dio-dolje -->
+                .marketing-2dio-dolje -->
+
+                <article class="cjenik">
+
+                <?php
+
+                    if (have_posts()) {
+                        while (have_posts()) {
+                            the_post();
+                            
+                            $content = get_the_content();
+
+                            echo $content;
+                            
+                            }}?>
+
+                </article>
 
             </section>
             <!-- .marketing-2dio -->
@@ -316,7 +332,7 @@
 
                 <h3 id="baticee-dolje2">Stvarajmo priče&nbsp;<div class="text-color-red">zajedno!</div></h3>
                 
-                <div id="kontakt"><a href="javascript:void(0)" onclick="openForm()">kontaktirajte nas</a></div>
+                <div id="kontakt"><a href="/kontakt">kontaktirajte nas</a></div>
 
                 <div class="social-marketing">
 
@@ -380,6 +396,24 @@
 
 </main>
 <!-- .marketing main-catpage-->
+
+<div id="prozor-arrowa" class="<?php $current_url = $_SERVER['REQUEST_URI']; // Get the current URL path
+
+        // Check if the current URL contains "/sport"
+        if (strpos($current_url, '/sport') !== false) {
+            echo 'prozor-sport'; // Add a custom class if the URL contains "/sport"
+        } elseif (strpos($current_url, '/promo') !== false) {
+            echo 'prozor-promo'; // Add a custom class if the URL contains "/sport"
+        } elseif (strpos($current_url, '/posljednji-pozdrav') !== false) {
+            echo 'prozor-pp'; // Add a custom class if the URL contains "/sport"
+        }
+
+        ?>">
+
+        <img src="<?php echo get_stylesheet_directory_uri()?>/slike/arrow.png" alt="arrow">
+
+    </div>
+    <!-- #prozor-arrowa -->
 
 <?php include ('nav/trazilica.php');
 

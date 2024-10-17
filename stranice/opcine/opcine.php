@@ -107,6 +107,7 @@
             <?php     
             
             $exclude_category = get_category_by_slug('istaknuto')->term_id;
+            $exclude_category2 = get_category_by_slug('promo')->term_id;
 
             $args = array(
                 'category_name' => 'istaknuto-opcine',
@@ -116,7 +117,7 @@
                     array(
                         'taxonomy' => 'category',
                         'field'    => 'id',
-                        'terms'    => array($exclude_category),
+                        'terms'    => array($exclude_category, $exclude_category2),
                         'operator' => 'NOT IN',
                     ),
                 ),
@@ -224,6 +225,8 @@
                 <!-- Revive Adserver Asynchronous JS Tag - Generated with Revive Adserver v5.4.1 -->
                 <ins data-revive-zoneid="204" data-revive-id="987aaa8bfddb5a07fc66ba2d45209ef6"></ins>
                 <script async src="//www.icvads.com/www/delivery/asyncjs.php"></script>
+                
+                <p>Oglas</p>
 
             </div>
             <!-- .slager-aside-oglas -->

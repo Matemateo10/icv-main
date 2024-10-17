@@ -217,10 +217,6 @@ th {
     letter-spacing: 0.3px;
 }
 
-.sadrzaj-desno p strong{
-    font-size: 18px;
-}
-
 .sadrzaj-desno p:first-of-type{
     padding-bottom: 10px;
 }
@@ -252,9 +248,7 @@ th {
 }
 
 .sadrzaj-desno a{
-    color:#276BB0;
-    text-decoration: underline;
-    font-size: 18px;
+    color:#eb1e25;
 }
 
 .sadrzaj-desno h1, .sadrzaj-desno h2, .sadrzaj-desno h3, .sadrzaj-desno h4, .sadrzaj-desno h5{

@@ -21,9 +21,9 @@ $mobile_ad = 'oglas1-mobile.php';
 $adType = isset($_COOKIE['adType']) ? $_COOKIE['adType'] : 'desktop-ad';
 
 if ($adType === 'desktop-ad') {
-    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $desktop_ad;
+    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/clanak/' . $desktop_ad;
 } else {
-    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/naslovnica/' . $mobile_ad;
+    $file_path = ABSPATH . 'wp-content/themes/icvtheme/oglasi/clanak/' . $mobile_ad;
 }
 
 if (!empty($file_path) && file_exists($file_path)) {
@@ -94,8 +94,14 @@ if (!empty($file_path) && file_exists($file_path)) {
         </h1>
         <!-- #post-title -->
 
-        <article class="post-date-single"><?php include('pomocne/date.php')?></article>
+        <article class="post-date-single <?php if (has_category('promo')) { echo 'hide-promo-date'; }?>"><?php include('pomocne/date.php')?></article>
         <!-- .post-date-single -->
+
+        <?php if (has_category('promo')){
+
+            echo '<p class="oglas-single mb-30">oglas</p>';
+
+        }?>
 
         <article class="social-sharing">
 

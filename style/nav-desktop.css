@@ -7,6 +7,10 @@
 .show{
     display:block !important;}
 
+.hide-promo-date{
+    display: none;
+}
+
 .vijesti-c-c{
     display: none;
 }
@@ -166,7 +170,7 @@
 /* oglas *************************************************************/
 
 .oglas-izmedu{
-    display: flex;
+    display: flex !important;
     align-items: center;
     max-width: 1200px;
     margin:60px auto;
@@ -176,15 +180,15 @@
     font-weight: bold;
 }
 
-.oglas-izmedu a {
+.oglas-izmedu a, .slager-aside-oglas a {
     z-index: 1;
 }
 
-.oglas-izmedu ins{
+.oglas-izmedu ins, .slager-aside-oglas ins{
     z-index: 1;
 }
 
-.oglas-izmedu p {
+.oglas-izmedu p, .slager-aside-oglas p {
     font-size: 30px;
     font-weight: 300;
     position: absolute; 
@@ -193,6 +197,17 @@
     color: #ebebeb;
     z-index: 0;
 }
+
+.slager-aside-oglas{
+    display: flex;
+    align-items:center;
+    max-width:300px;
+    justify-content: center;
+    height:250px;
+    min-height: 250px;
+    font-weight: bold;
+}
+
 /* vijesti-sport nav - Vijesti/Sport/Zupanije/Opcine *******************************/
 
 .secondary-nav{

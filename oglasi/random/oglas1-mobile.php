@@ -1,7 +1,7 @@
 <!-- Iznad posljednji-pozdrav -->
  
 <!-- Mjesto za oglas -->
-<div class="oglas-izmedu mobile-ad">
+<div class="oglas-izmedu">
 
     <p>Oglas</p>
 

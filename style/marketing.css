@@ -167,6 +167,11 @@
     display:none;
 }
 
+.cjenik a{
+    color:#eb1e25;
+    font-size: 30px;
+}
+
 .disable-hover:hover{
     background-color: #eb1e25;
     color:white;

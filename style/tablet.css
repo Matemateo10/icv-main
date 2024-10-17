@@ -552,7 +552,7 @@
     .trazilica-pic-link{
         margin-right:0;
     }
-
+    
     .trazilica-category{
         padding: 10px 0 0 0;
     }
@@ -567,6 +567,10 @@
 
     .single-category{
         margin-left:10px;
+    }
+
+    .oglas-single{
+        margin-left: 10px;
     }
 
     /* Marketing */
